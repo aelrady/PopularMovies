@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.no_connection) TextView connectionTextView;
     @BindView(R.id.network_exception) TextView networkExceptionTextView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
