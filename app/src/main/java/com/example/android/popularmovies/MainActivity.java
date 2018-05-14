@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
+
     @BindView(R.id.no_connection) TextView connectionTextView;
     @BindView(R.id.network_exception) TextView networkExceptionTextView;
 
