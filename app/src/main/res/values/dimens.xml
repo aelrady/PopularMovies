@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="poster_height">280dp</dimen>
+    <dimen name="poster_margin">0.5dp</dimen>
+
+    <dimen name="detail_poster_width">130dp</dimen>
+    <dimen name="detail_poster_height">200dp</dimen>
+    <dimen name="detail_padding">8dp</dimen>
+    <dimen name="text_padding">30dp</dimen>
+    <dimen name="title_size">24sp</dimen>
+    <dimen name="detail_text_size">16sp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+</resources>

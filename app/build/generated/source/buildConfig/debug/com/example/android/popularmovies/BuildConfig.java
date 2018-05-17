@@ -10,4 +10,6 @@ public final class BuildConfig {
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
+  // Fields from build type: debug
+  public static final String API_KEY = "f3a1a00157a6bc8750d0d6a07bfd9811";
 }

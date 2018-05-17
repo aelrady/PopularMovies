@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w185";
     private String sort_param = "popular";
-    GridLayoutManager gridLayoutManager;
+    private GridLayoutManager gridLayoutManager;
     private ArrayList<String> picturePathList;
     private ArrayList<Movie> movies;
     private MovieAdapter movieAdapter;
@@ -98,15 +98,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void populateGrid() {
 
-        final String your_api_key = "";
-
         recyclerView = findViewById(R.id.rv_movies);
         gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
         MovieApiInterface movieApiInterface = MovieApiClient.getClient().create(MovieApiInterface.class);
 
-        Call<MovieResults> call = movieApiInterface.getMovies(sort_param, your_api_key);
+        Call<MovieResults> call = movieApiInterface.getMovies(sort_param, BuildConfig.API_KEY);
         call.enqueue(new Callback<MovieResults>() {
             @Override
             public void onResponse(Call<MovieResults> call, Response<MovieResults> response) {
