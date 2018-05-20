@@ -34,7 +34,7 @@ public class DetailActivity extends AppCompatActivity {
         String moviePosterUrl = movie.getPosterPath();
         String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;
         ImageView moviePosterImageView = findViewById(R.id.movie_poster);
-        Picasso.with(this).load(fullMoviePosterUrl).fit().centerCrop().into(moviePosterImageView);
+        Picasso.with(this).load(fullMoviePosterUrl).resize(385, 579).into(moviePosterImageView);
 
         String title = movie.getTitle();
         TextView titleTextView = findViewById(R.id.title);

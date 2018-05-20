@@ -4,4 +4,9 @@
     <string name="highest_rated">Highest Rated</string>
     <string name="no_internet">No Internet Connection</string>
     <string name="network_exception">A network exception occurred.</string>
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="trailer_1">Trailer 1</string>
+    <string name="review_1">Review 1</string>
+    <string name="show_more">SHOW MORE</string>
 </resources>

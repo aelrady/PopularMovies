@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/movie_poster"
-            android:layout_width="@dimen/detail_poster_width"
-            android:layout_height="@dimen/poster_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/sample_0"
             android:padding="@dimen/detail_padding"/>
 
@@ -29,7 +29,8 @@
                 style="@style/DetailActivityText"
                 android:text="Title"
                 android:textSize="@dimen/title_size"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/release_date"
@@ -59,7 +60,95 @@
             android:text="A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground fight clubs forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."
             android:layout_below="@id/divide_1"
             android:padding="@dimen/detail_padding"
+            android:textSize="@dimen/detail_text_size"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/divide_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/black"
+            android:layout_below="@id/overview"/>
+
+        <TextView
+            android:id="@+id/trailers"
+            style="@style/DetailActivityText"
+            android:text="@string/trailers"
+            android:textSize="@dimen/title_size"
+            android:layout_below="@id/divide_2"
+            android:padding="@dimen/detail_padding"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/divide_3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/gray"
+            android:layout_below="@id/trailers"/>
+
+        <TextView
+            android:id="@+id/trailer_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trailer_1"
+            android:layout_below="@id/divide_3"
+            android:padding="@dimen/detail_padding_wide"
             android:textSize="@dimen/detail_text_size"/>
+
+        <TextView
+            android:id="@+id/show_more_trailers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/show_more"
+            android:layout_below="@id/trailer_1"
+            android:paddingTop="@dimen/no_padding"
+            android:paddingLeft="@dimen/detail_padding_wide"
+            android:paddingBottom="@dimen/detail_padding_wide"
+            android:textSize="@dimen/detail_text_size"/>
+
+        <TextView
+            android:id="@+id/divide_4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/black"
+            android:layout_below="@id/show_more_trailers"/>
+
+        <TextView
+            android:id="@+id/reviews"
+            style="@style/DetailActivityText"
+            android:text="@string/reviews"
+            android:textSize="@dimen/title_size"
+            android:layout_below="@id/divide_4"
+            android:padding="@dimen/detail_padding"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/divide_5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/gray"
+            android:layout_below="@id/reviews"/>
+
+        <TextView
+            android:id="@+id/review_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/review_1"
+            android:layout_below="@id/divide_5"
+            android:padding="@dimen/detail_padding_wide"
+            android:textSize="@dimen/detail_text_size"/>
+
+        <TextView
+            android:id="@+id/show_more_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/show_more"
+            android:layout_below="@id/review_1"
+            android:paddingTop="@dimen/no_padding"
+            android:paddingLeft="@dimen/detail_padding_wide"
+            android:paddingBottom="@dimen/detail_padding_wide"
+            android:textSize="@dimen/detail_text_size"/>
+
 
     </RelativeLayout>
 

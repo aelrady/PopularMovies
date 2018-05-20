@@ -166,6 +166,7 @@
     <color name="error_color_material">#F4511E</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="gray">#D3D3D3</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="material_blue_grey_800">#ff37474f</color>
@@ -480,6 +481,7 @@
     <dimen name="compat_button_padding_vertical_material">4dp</dimen>
     <dimen name="compat_control_corner_material">2dp</dimen>
     <dimen name="detail_padding">8dp</dimen>
+    <dimen name="detail_padding_wide">16dp</dimen>
     <dimen name="detail_poster_height">200dp</dimen>
     <dimen name="detail_poster_width">130dp</dimen>
     <dimen name="detail_text_size">16sp</dimen>
@@ -499,6 +501,7 @@
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="no_padding">0dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -516,7 +519,7 @@
     <dimen name="notification_top_pad_large_text">5dp</dimen>
     <dimen name="poster_height">280dp</dimen>
     <dimen name="poster_margin">0.5dp</dimen>
-    <dimen name="text_padding">30dp</dimen>
+    <dimen name="text_padding">15dp</dimen>
     <dimen name="title_size">24sp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
@@ -584,8 +587,13 @@
     <string name="most_popular">Most Popular</string>
     <string name="network_exception">A network exception occurred.</string>
     <string name="no_internet">No Internet Connection</string>
+    <string name="review_1">Review 1</string>
+    <string name="reviews">Reviews</string>
     <string name="search_menu_title">Search</string>
+    <string name="show_more">SHOW MORE</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="trailer_1">Trailer 1</string>
+    <string name="trailers">Trailers</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
