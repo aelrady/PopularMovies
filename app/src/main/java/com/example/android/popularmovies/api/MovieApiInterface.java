@@ -12,4 +12,14 @@ public interface MovieApiInterface {
     Call<MovieResults> getMovies(
             @Path("sort_param") String sortParam,
             @Query("api_key") String apiKey);
+
+    @GET("movie/{movie_id}/videos")
+    Call<MovieResults> getVideos(
+            @Path("movie_id") int movieId,
+            @Query("api_key") String apiKey);
+
+    @GET("movie/{movie_id}/reviews")
+    Call<MovieResults> getReviews(
+            @Path("movie_id") int movieId,
+            @Query("api_key") String apiKey);
 }
