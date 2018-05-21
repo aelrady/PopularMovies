@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.android.popularmovies.api.MovieApiClient;
 import com.example.android.popularmovies.api.MovieApiInterface;
+import com.example.android.popularmovies.model.Movie;
+import com.example.android.popularmovies.model.MovieResults;
 
 import java.util.ArrayList;
 
