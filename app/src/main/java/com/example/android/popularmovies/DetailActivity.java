@@ -5,31 +5,62 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android.popularmovies.api.MovieApiClient;
+import com.example.android.popularmovies.api.MovieApiInterface;
 import com.example.android.popularmovies.model.Movie;
+import com.example.android.popularmovies.model.Review;
+import com.example.android.popularmovies.model.ReviewResults;
+import com.example.android.popularmovies.model.Trailer;
+import com.example.android.popularmovies.model.TrailerResults;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetailActivity extends AppCompatActivity {
 
     private static final String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w185";
+    private ArrayList<Trailer> trailers;
+    private ArrayList<Review> reviews;
+    private Movie movie;
+
+    private static final String TRAILER_BASE_URL = "https://www.youtube.com/watch?v=";
+    private ArrayList<String> trailerPathList;
+    private ArrayList<String> reviewList;
+    private ArrayList<String> reviewAuthorList;
+
+    @BindView(R.id.detail_network_exception) TextView detailNetworkExceptionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        ButterKnife.bind(this);
+
+        detailNetworkExceptionTextView.setVisibility(View.GONE);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         populateDetailActivity();
+
+        callTrailers();
+
+        callReviews();
     }
 
     private void populateDetailActivity() {
         Intent intent = getIntent();
-        Movie movie = intent.getParcelableExtra("movie");
+        movie = intent.getParcelableExtra("movie");
         Log.v("Movies: ", String.valueOf(movie));
 
         String moviePosterUrl = movie.getPosterPath();
@@ -115,4 +146,60 @@ public class DetailActivity extends AppCompatActivity {
     public String formatRating(Float rating) {
         return rating + "/10";
     }
+
+
+    public void callTrailers() {
+
+        int movieId = movie.getId();
+
+        MovieApiInterface movieApiInterface = MovieApiClient.getClient().create(MovieApiInterface.class);
+
+        Call<TrailerResults> call = movieApiInterface.getTrailers(movieId, BuildConfig.API_KEY);
+        call.enqueue(new Callback<TrailerResults>() {
+            @Override
+            public void onResponse(Call<TrailerResults> call, Response<TrailerResults> response) {
+                trailers = (ArrayList<Trailer>) response.body().getResults();
+                trailerPathList = new ArrayList<>();
+                for (int i = 0; i < trailers.size(); i++) {
+                    trailerPathList.add(TRAILER_BASE_URL + trailers.get(i).getKey());
+                }
+                Log.v("Trailers: ", String.valueOf(trailerPathList));
+            }
+
+            @Override
+            public void onFailure(Call<TrailerResults> call, Throwable t) {
+                detailNetworkExceptionTextView.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+
+    public void callReviews() {
+
+        int movieId = movie.getId();
+
+        MovieApiInterface movieApiInterface = MovieApiClient.getClient().create(MovieApiInterface.class);
+
+        Call<ReviewResults> call = movieApiInterface.getReviews(movieId, BuildConfig.API_KEY);
+        call.enqueue(new Callback<ReviewResults>() {
+            @Override
+            public void onResponse(Call<ReviewResults> call, Response<ReviewResults> response) {
+                reviews = (ArrayList<Review>) response.body().getResults();
+                reviewList = new ArrayList<>();
+                reviewAuthorList = new ArrayList<>();
+                for (int i = 0; i < reviews.size(); i++) {
+                    reviewList.add(reviews.get(i).getContent());
+                    reviewAuthorList.add(reviews.get(i).getAuthor());
+                }
+                Log.v("Authors: ", String.valueOf(reviewAuthorList));
+                Log.v("Reviews: ", String.valueOf(reviewList));
+            }
+
+            @Override
+            public void onFailure(Call<ReviewResults> call, Throwable t) {
+                detailNetworkExceptionTextView.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
 }

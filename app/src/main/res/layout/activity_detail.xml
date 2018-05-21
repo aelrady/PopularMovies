@@ -149,6 +149,10 @@
             android:paddingBottom="@dimen/detail_padding_wide"
             android:textSize="@dimen/detail_text_size"/>
 
+        <TextView
+            android:id="@+id/detail_network_exception"
+            style="@style/ErrorText"
+            android:text="@string/network_exception"/>
 
     </RelativeLayout>
 
