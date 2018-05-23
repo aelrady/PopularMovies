@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.popularmovies.api.MovieApiClient;
 import com.example.android.popularmovies.api.MovieApiInterface;
@@ -39,6 +41,12 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayList<String> reviewAuthorList;
 
     @BindView(R.id.detail_network_exception) TextView detailNetworkExceptionTextView;
+    @BindView(R.id.trailer_1) LinearLayout trailer;
+    @BindView(R.id.show_more_trailers) TextView showMoreTrailersTextView;
+    @BindView(R.id.review_1) LinearLayout review;
+    @BindView(R.id.show_more_reviews) TextView showMoreReviewsTextView;
+    @BindView(R.id.review_text) TextView reviewTextView;
+    @BindView(R.id.author) TextView authorTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,11 +172,27 @@ public class DetailActivity extends AppCompatActivity {
                     trailerPathList.add(TRAILER_BASE_URL + trailers.get(i).getKey());
                 }
                 Log.v("Trailers: ", String.valueOf(trailerPathList));
+
+
             }
 
             @Override
             public void onFailure(Call<TrailerResults> call, Throwable t) {
                 detailNetworkExceptionTextView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        trailer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailActivity.this, "Trailer 1", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        showMoreTrailersTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailActivity.this, "More trailers", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -193,11 +217,27 @@ public class DetailActivity extends AppCompatActivity {
                 }
                 Log.v("Authors: ", String.valueOf(reviewAuthorList));
                 Log.v("Reviews: ", String.valueOf(reviewList));
+
+
             }
 
             @Override
             public void onFailure(Call<ReviewResults> call, Throwable t) {
                 detailNetworkExceptionTextView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailActivity.this, "Review 1", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        showMoreReviewsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailActivity.this, "More reviews", Toast.LENGTH_SHORT).show();
             }
         });
     }
