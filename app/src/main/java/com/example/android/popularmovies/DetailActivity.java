@@ -34,11 +34,7 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayList<Trailer> trailers;
     private ArrayList<Review> reviews;
     private Movie movie;
-
     private static final String TRAILER_BASE_URL = "https://www.youtube.com/watch?v=";
-    private ArrayList<String> trailerPathList;
-    private ArrayList<String> reviewList;
-    private ArrayList<String> reviewAuthorList;
 
     @BindView(R.id.detail_network_exception) TextView detailNetworkExceptionTextView;
     @BindView(R.id.trailer_1) LinearLayout trailer;
@@ -167,13 +163,10 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<TrailerResults> call, Response<TrailerResults> response) {
                 trailers = (ArrayList<Trailer>) response.body().getResults();
-                trailerPathList = new ArrayList<>();
-                for (int i = 0; i < trailers.size(); i++) {
-                    trailerPathList.add(TRAILER_BASE_URL + trailers.get(i).getKey());
+
+                if (trailers.isEmpty()) {
+                    trailer.setVisibility(View.GONE);
                 }
-                Log.v("Trailers: ", String.valueOf(trailerPathList));
-
-
             }
 
             @Override
@@ -209,16 +202,12 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ReviewResults> call, Response<ReviewResults> response) {
                 reviews = (ArrayList<Review>) response.body().getResults();
-                reviewList = new ArrayList<>();
-                reviewAuthorList = new ArrayList<>();
-                for (int i = 0; i < reviews.size(); i++) {
-                    reviewList.add(reviews.get(i).getContent());
-                    reviewAuthorList.add(reviews.get(i).getAuthor());
+                if (!reviews.isEmpty()) {
+                    authorTextView.setText(reviews.get(0).getAuthor());
+                    reviewTextView.setText(reviews.get(0).getContent());
+                } else {
+                    review.setVisibility(View.GONE);
                 }
-                Log.v("Authors: ", String.valueOf(reviewAuthorList));
-                Log.v("Reviews: ", String.valueOf(reviewList));
-
-
             }
 
             @Override
