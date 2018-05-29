@@ -38,6 +38,7 @@ public class DetailActivity extends AppCompatActivity {
 
     @BindView(R.id.detail_network_exception) TextView detailNetworkExceptionTextView;
     @BindView(R.id.trailer_1) LinearLayout trailer;
+    @BindView(R.id.trailer) TextView trailerTextView;
     @BindView(R.id.show_more_trailers) TextView showMoreTrailersTextView;
     @BindView(R.id.review_1) LinearLayout review;
     @BindView(R.id.show_more_reviews) TextView showMoreReviewsTextView;
@@ -154,17 +155,17 @@ public class DetailActivity extends AppCompatActivity {
 
     public void callTrailers() {
 
-        int movieId = movie.getId();
-
         MovieApiInterface movieApiInterface = MovieApiClient.getClient().create(MovieApiInterface.class);
 
-        Call<TrailerResults> call = movieApiInterface.getTrailers(movieId, BuildConfig.API_KEY);
+        Call<TrailerResults> call = movieApiInterface.getTrailers(movie.getId(), BuildConfig.API_KEY);
         call.enqueue(new Callback<TrailerResults>() {
             @Override
             public void onResponse(Call<TrailerResults> call, Response<TrailerResults> response) {
-                trailers = (ArrayList<Trailer>) response.body().getResults();
-
-                if (trailers.isEmpty()) {
+                Log.v("Response: ", String.valueOf(response.body()));
+                if (response.body() != null) {
+                    trailers = (ArrayList<Trailer>) response.body().getResults();
+                    Log.v("Trailers List: ", String.valueOf(trailers));
+                } else {
                     trailer.setVisibility(View.GONE);
                 }
             }
@@ -193,15 +194,15 @@ public class DetailActivity extends AppCompatActivity {
 
     public void callReviews() {
 
-        int movieId = movie.getId();
-
         MovieApiInterface movieApiInterface = MovieApiClient.getClient().create(MovieApiInterface.class);
 
-        Call<ReviewResults> call = movieApiInterface.getReviews(movieId, BuildConfig.API_KEY);
+        Call<ReviewResults> call = movieApiInterface.getReviews(movie.getId(), BuildConfig.API_KEY);
         call.enqueue(new Callback<ReviewResults>() {
+
             @Override
             public void onResponse(Call<ReviewResults> call, Response<ReviewResults> response) {
                 reviews = (ArrayList<Review>) response.body().getResults();
+                Log.v("Reviews: ", String.valueOf(reviews));
                 if (!reviews.isEmpty()) {
                     authorTextView.setText(reviews.get(0).getAuthor());
                     reviewTextView.setText(reviews.get(0).getContent());
@@ -216,19 +217,21 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        review.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(DetailActivity.this, "Review 1", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         showMoreReviewsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DetailActivity.this, "More reviews", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DetailActivity.this, "More reviews", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DetailActivity.this, ReviewActivity.class);
+                startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList("trailers", trailers);
+        outState.putParcelableArrayList("reviews", reviews);
+        super.onSaveInstanceState(outState);
     }
 
 }
