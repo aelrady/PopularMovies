@@ -186,7 +186,9 @@ public class DetailActivity extends AppCompatActivity {
         showMoreTrailersTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DetailActivity.this, "More trailers", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DetailActivity.this, TrailerActivity.class);
+                intent.putParcelableArrayListExtra("trailers", trailers);
+                startActivity(intent);
             }
         });
     }
@@ -220,8 +222,8 @@ public class DetailActivity extends AppCompatActivity {
         showMoreReviewsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(DetailActivity.this, "More reviews", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DetailActivity.this, ReviewActivity.class);
+                intent.putParcelableArrayListExtra("reviews", reviews);
                 startActivity(intent);
             }
         });

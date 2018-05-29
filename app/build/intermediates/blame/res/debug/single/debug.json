@@ -892,6 +892,10 @@
         "source": "/Users/ashleyelrady/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0973c1d9bda92a4a84f70ae304dcad4c/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/layout_activity_trailer.xml.flat",
+        "source": "/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/src/main/res/layout/activity_trailer.xml"
+    },
+    {
         "merged": "/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/Users/ashleyelrady/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0973c1d9bda92a4a84f70ae304dcad4c/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },

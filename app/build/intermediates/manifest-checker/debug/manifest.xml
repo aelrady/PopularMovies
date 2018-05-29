@@ -38,6 +38,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name="com.example.android.popularmovies.ReviewActivity" />
+        <activity android:name="com.example.android.popularmovies.TrailerActivity" />
 
         <meta-data
             android:name="android.support.VERSION"
