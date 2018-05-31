@@ -1,4 +1,4 @@
-#Thu May 31 00:13:40 EDT 2018
+#Thu May 31 02:18:57 EDT 2018
 base.0=/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/transforms/dexMerger/debug/2
 path.0=classes.dex
 renamed.0=classes.dex
