@@ -7,22 +7,22 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.1.0"
-    timestamp="1527566450208"
+    timestamp="1527740013967"
     token="813178595188613925"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="3110" />
+        duration="2341" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="172" />
+        duration="145" />
     <task
         name="verifier"
-        duration="16" />
+        duration="26" />
 
     <artifact
         location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -30,23 +30,13 @@
 
     <build
         build-mode="FULL"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1527565940440"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1527739387385"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
-            type="SPLIT" />
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -55,17 +45,34 @@
             location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
             location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
+        <artifact
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1527739864904"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
@@ -73,7 +80,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1527566450208"
+        timestamp="1527740013967"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_2.apk"

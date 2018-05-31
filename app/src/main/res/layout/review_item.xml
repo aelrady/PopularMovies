@@ -11,8 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Author"
-        android:paddingTop="@dimen/detail_padding_wide"
-        android:paddingLeft="@dimen/detail_padding_wide"
+        android:paddingTop="@dimen/detail_padding"
+        android:paddingLeft="@dimen/detail_padding"
+        android:paddingRight="@dimen/detail_padding"
         android:textStyle="bold"/>
 
     <TextView
@@ -20,7 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Review"
-        android:paddingTop="@dimen/detail_padding"
-        android:paddingLeft="@dimen/detail_padding_wide" />
+        android:padding="@dimen/detail_padding"/>
 
 </LinearLayout>

@@ -9,16 +9,6 @@ tools:context=".ReviewActivity" >
 <android.support.v7.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rv_movies"/>
-
-<TextView
-    android:id="@+id/no_connection"
-    style="@style/ErrorText"
-    android:text="@string/no_internet"/>
-
-<TextView
-    android:id="@+id/network_exception"
-    style="@style/ErrorText"
-    android:text="@string/network_exception"/>
+    android:id="@+id/rv_reviews"/>
 
 </FrameLayout>
