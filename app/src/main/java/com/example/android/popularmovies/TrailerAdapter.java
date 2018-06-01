@@ -1,11 +1,14 @@
 package com.example.android.popularmovies;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,11 +26,13 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerA
     }
 
     public class TrailerAdapterViewHolder extends RecyclerView.ViewHolder {
+        LinearLayout linearLayout;
 
         public TrailerAdapterViewHolder(View itemView) {
             super(itemView);
             playImageView = itemView.findViewById(R.id.play);
             trailerTextView = itemView.findViewById(R.id.trailer);
+            linearLayout = itemView.findViewById(R.id.trailer_item);
         }
     }
 
@@ -42,9 +47,19 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerA
     }
 
     @Override
-    public void onBindViewHolder(TrailerAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(TrailerAdapterViewHolder holder, final int position) {
         playImageView.setImageResource(R.drawable.ic_play_arrow_gray_24dp);
         trailerTextView.setText("Trailer " + Integer.toString(position + 1));
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(mTrailers.get(position)));
+                mContext.startActivity(intent);
+
+            }
+        });
     }
 
     @Override

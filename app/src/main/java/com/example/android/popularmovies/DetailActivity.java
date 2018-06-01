@@ -1,6 +1,7 @@
 package com.example.android.popularmovies;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +10,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.popularmovies.api.MovieApiClient;
 import com.example.android.popularmovies.api.MovieApiInterface;
@@ -34,7 +34,7 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayList<Trailer> trailers;
     private ArrayList<Review> reviews;
     private Movie movie;
-    private static final String TRAILER_BASE_URL = "https://www.youtube.com/watch?v=";
+    private static final String YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v=";
 
     @BindView(R.id.detail_network_exception) TextView detailNetworkExceptionTextView;
     @BindView(R.id.trailer_1) LinearLayout trailer;
@@ -179,7 +179,9 @@ public class DetailActivity extends AppCompatActivity {
         trailer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DetailActivity.this, "Trailer 1", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(YOUTUBE_BASE_URL + trailers.get(0).getKey()));
+                startActivity(intent);
             }
         });
 
@@ -235,5 +237,4 @@ public class DetailActivity extends AppCompatActivity {
         outState.putParcelableArrayList("reviews", reviews);
         super.onSaveInstanceState(outState);
     }
-
 }
