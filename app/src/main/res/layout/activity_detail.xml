@@ -44,6 +44,12 @@
                 android:text="9.8/10"
                 android:textSize="@dimen/detail_text_size" />
 
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_border_black_24dp"/>
+
         </LinearLayout>
 
         <TextView

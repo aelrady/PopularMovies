@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.android.popularmovies.api.MovieApiClient;
 import com.example.android.popularmovies.api.MovieApiInterface;
+import com.example.android.popularmovies.database.MovieRoomDatabase;
 import com.example.android.popularmovies.model.Movie;
 import com.example.android.popularmovies.model.Review;
 import com.example.android.popularmovies.model.ReviewResults;
@@ -35,6 +36,11 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayList<Review> reviews;
     private Movie movie;
     private static final String YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v=";
+    private boolean favorite;
+    private MovieRoomDatabase mMovieRoomDatabase;
+
+    int id;
+    int[] ids;
 
     @BindView(R.id.detail_network_exception) TextView detailNetworkExceptionTextView;
     @BindView(R.id.trailer_1) LinearLayout trailer;
@@ -44,6 +50,7 @@ public class DetailActivity extends AppCompatActivity {
     @BindView(R.id.show_more_reviews) TextView showMoreReviewsTextView;
     @BindView(R.id.review_text) TextView reviewTextView;
     @BindView(R.id.author) TextView authorTextView;
+    @BindView(R.id.star) ImageView star;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +63,22 @@ public class DetailActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
+
         populateDetailActivity();
 
         callTrailers();
 
         callReviews();
+
+        id = movie.getId();
+        ids = mMovieRoomDatabase.movieDao().getIds();
+        if (isInDatabase(ids, id)) {
+            star.setImageResource(R.drawable.ic_star_yellow_24dp);
+        }
+        updateFavorites();
+
+
     }
 
     private void populateDetailActivity() {
@@ -236,5 +254,43 @@ public class DetailActivity extends AppCompatActivity {
         outState.putParcelableArrayList("trailers", trailers);
         outState.putParcelableArrayList("reviews", reviews);
         super.onSaveInstanceState(outState);
+    }
+
+    public void updateFavorites() {
+        star.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                id = movie.getId();
+                ids = mMovieRoomDatabase.movieDao().getIds();
+                Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
+                String moviePosterUrl = movie.getPosterPath();
+                String title = movie.getTitle();
+                String date = movie.getReleaseDate();
+                Float rating = movie.getVoteAverage();
+                String overview = movie.getOverview();
+                Movie movie = new Movie(id, moviePosterUrl, title, date, rating, overview);
+                if (!isInDatabase(ids, id)) {
+                        star.setImageResource(R.drawable.ic_star_yellow_24dp);
+                        //favorite = true;
+                        mMovieRoomDatabase.movieDao().insert(movie);
+                    } else {
+                        star.setImageResource(R.drawable.ic_star_border_black_24dp);
+                        //favorite = false;
+                        mMovieRoomDatabase.movieDao().delete(movie);
+                    }
+                }
+        });
+    }
+
+    public static boolean isInDatabase(final int[] ids, final int id) {
+        boolean favorite = false;
+        for(int i : ids) {
+            if(i == id) {
+                favorite = true;
+                break;
+            }
+        }
+        return favorite;
     }
 }

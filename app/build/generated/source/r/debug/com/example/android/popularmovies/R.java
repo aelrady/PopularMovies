@@ -1704,7 +1704,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -2960,21 +2960,23 @@ public final class R {
     public static final int ic_launcher_foreground=0x7f060055;
     public static final int ic_play_arrow_black_24dp=0x7f060056;
     public static final int ic_play_arrow_gray_24dp=0x7f060057;
-    public static final int notification_action_background=0x7f060058;
-    public static final int notification_bg=0x7f060059;
-    public static final int notification_bg_low=0x7f06005a;
-    public static final int notification_bg_low_normal=0x7f06005b;
-    public static final int notification_bg_low_pressed=0x7f06005c;
-    public static final int notification_bg_normal=0x7f06005d;
-    public static final int notification_bg_normal_pressed=0x7f06005e;
-    public static final int notification_icon_background=0x7f06005f;
-    public static final int notification_template_icon_bg=0x7f060060;
-    public static final int notification_template_icon_low_bg=0x7f060061;
-    public static final int notification_tile_bg=0x7f060062;
-    public static final int notify_panel_notification_icon_bg=0x7f060063;
-    public static final int sample_0=0x7f060064;
-    public static final int tooltip_frame_dark=0x7f060065;
-    public static final int tooltip_frame_light=0x7f060066;
+    public static final int ic_star_border_black_24dp=0x7f060058;
+    public static final int ic_star_yellow_24dp=0x7f060059;
+    public static final int notification_action_background=0x7f06005a;
+    public static final int notification_bg=0x7f06005b;
+    public static final int notification_bg_low=0x7f06005c;
+    public static final int notification_bg_low_normal=0x7f06005d;
+    public static final int notification_bg_low_pressed=0x7f06005e;
+    public static final int notification_bg_normal=0x7f06005f;
+    public static final int notification_bg_normal_pressed=0x7f060060;
+    public static final int notification_icon_background=0x7f060061;
+    public static final int notification_template_icon_bg=0x7f060062;
+    public static final int notification_template_icon_low_bg=0x7f060063;
+    public static final int notification_tile_bg=0x7f060064;
+    public static final int notify_panel_notification_icon_bg=0x7f060065;
+    public static final int sample_0=0x7f060066;
+    public static final int tooltip_frame_dark=0x7f060067;
+    public static final int tooltip_frame_light=0x7f060068;
   }
   public static final class id {
     public static final int ALT=0x7f070000;
@@ -3122,31 +3124,32 @@ public final class R {
     public static final int src_in=0x7f07008e;
     public static final int src_over=0x7f07008f;
     public static final int standard=0x7f070090;
-    public static final int start=0x7f070091;
-    public static final int status_bar_latest_event_content=0x7f070092;
-    public static final int submenuarrow=0x7f070093;
-    public static final int submit_area=0x7f070094;
-    public static final int tabMode=0x7f070095;
-    public static final int text=0x7f070096;
-    public static final int text2=0x7f070097;
-    public static final int textSpacerNoButtons=0x7f070098;
-    public static final int textSpacerNoTitle=0x7f070099;
-    public static final int time=0x7f07009a;
-    public static final int title=0x7f07009b;
-    public static final int titleDividerNoCustom=0x7f07009c;
-    public static final int title_template=0x7f07009d;
-    public static final int top=0x7f07009e;
-    public static final int topPanel=0x7f07009f;
-    public static final int trailer=0x7f0700a0;
-    public static final int trailer_1=0x7f0700a1;
-    public static final int trailer_item=0x7f0700a2;
-    public static final int trailers=0x7f0700a3;
-    public static final int uniform=0x7f0700a4;
-    public static final int up=0x7f0700a5;
-    public static final int useLogo=0x7f0700a6;
-    public static final int withText=0x7f0700a7;
-    public static final int wrap=0x7f0700a8;
-    public static final int wrap_content=0x7f0700a9;
+    public static final int star=0x7f070091;
+    public static final int start=0x7f070092;
+    public static final int status_bar_latest_event_content=0x7f070093;
+    public static final int submenuarrow=0x7f070094;
+    public static final int submit_area=0x7f070095;
+    public static final int tabMode=0x7f070096;
+    public static final int text=0x7f070097;
+    public static final int text2=0x7f070098;
+    public static final int textSpacerNoButtons=0x7f070099;
+    public static final int textSpacerNoTitle=0x7f07009a;
+    public static final int time=0x7f07009b;
+    public static final int title=0x7f07009c;
+    public static final int titleDividerNoCustom=0x7f07009d;
+    public static final int title_template=0x7f07009e;
+    public static final int top=0x7f07009f;
+    public static final int topPanel=0x7f0700a0;
+    public static final int trailer=0x7f0700a1;
+    public static final int trailer_1=0x7f0700a2;
+    public static final int trailer_item=0x7f0700a3;
+    public static final int trailers=0x7f0700a4;
+    public static final int uniform=0x7f0700a5;
+    public static final int up=0x7f0700a6;
+    public static final int useLogo=0x7f0700a7;
+    public static final int withText=0x7f0700a8;
+    public static final int wrap=0x7f0700a9;
+    public static final int wrap_content=0x7f0700aa;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f080000;
@@ -7918,7 +7921,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>

@@ -43,10 +43,12 @@
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
 
+        <provider
+            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.android.popularmovies.lifecycle-trojan"
+            android:exported="false"
+            android:multiprocess="true" />
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.example.android.popularmovies.com.android.tools.ir.server.InstantRunContentProvider"
