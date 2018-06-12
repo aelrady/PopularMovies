@@ -2,6 +2,7 @@
     <string name="app_name">Popular Movies</string>
     <string name="most_popular">Most Popular</string>
     <string name="highest_rated">Highest Rated</string>
+    <string name="favorites">Favorites</string>
     <string name="no_internet">No Internet Connection</string>
     <string name="network_exception">A network exception occurred.</string>
     <string name="trailers">Trailers</string>

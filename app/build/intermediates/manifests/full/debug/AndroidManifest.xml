@@ -37,8 +37,27 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name="com.example.android.popularmovies.ReviewActivity" />
-        <activity android:name="com.example.android.popularmovies.TrailerActivity" />
+        <activity
+            android:name="com.example.android.popularmovies.ReviewActivity"
+            android:parentActivityName="com.example.android.popularmovies.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.android.popularmovies.TrailerActivity"
+            android:parentActivityName="com.example.android.popularmovies.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.android.popularmovies.FavoritesActivity"
+            android:parentActivityName="com.example.android.popularmovies.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
 
         <meta-data
             android:name="android.support.VERSION"

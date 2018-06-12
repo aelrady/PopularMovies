@@ -21,6 +21,9 @@ public interface MovieDao {
     @Query("SELECT id FROM movies")
     int[] getIds();
 
+    @Query("SELECT poster_path FROM movies")
+    List<String> getPosterPath();
+
     @Insert
     void insert(Movie movie);
 

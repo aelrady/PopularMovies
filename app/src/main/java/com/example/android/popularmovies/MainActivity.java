@@ -1,9 +1,12 @@
 package com.example.android.popularmovies;
 
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,12 +17,13 @@ import android.widget.TextView;
 
 import com.example.android.popularmovies.api.MovieApiClient;
 import com.example.android.popularmovies.api.MovieApiInterface;
+import com.example.android.popularmovies.database.MovieRoomDatabase;
 import com.example.android.popularmovies.model.Movie;
 import com.example.android.popularmovies.model.MovieResults;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> picturePathList;
     private ArrayList<Movie> movies;
     private MovieAdapter movieAdapter;
+    private FavoritesAdapter favoritesAdapter;
 
     private RecyclerView recyclerView;
 
-    @BindView(R.id.no_connection) TextView connectionTextView;
-    @BindView(R.id.network_exception) TextView networkExceptionTextView;
+    private TextView connectionTextView;
+    private TextView networkExceptionTextView;
+
+    private MovieRoomDatabase mMovieRoomDatabase;
+    private ArrayList<String> favoritesPicturePathList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,25 +53,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        connectionTextView = findViewById(R.id.no_connection);
+        networkExceptionTextView = findViewById(R.id.network_exception);
         networkExceptionTextView.setVisibility(View.GONE);
 
-        if (savedInstanceState == null || !savedInstanceState.containsKey("movies")) {
-            if (isConnected()) {
-                populateGrid();
-                connectionTextView.setVisibility(View.GONE);
-            } else {
-                connectionTextView.setVisibility(View.VISIBLE);
-            }
-        } else {
-            movies = savedInstanceState.getParcelableArrayList("movies");
-            picturePathList = savedInstanceState.getStringArrayList("pictures");
-            recyclerView = findViewById(R.id.rv_movies);
-            gridLayoutManager = new GridLayoutManager(this, 2);
-            recyclerView.setLayoutManager(gridLayoutManager);
-            movieAdapter = new MovieAdapter(MainActivity.this, picturePathList, movies);
-            recyclerView.setAdapter(movieAdapter);
+        if (isConnected()) {
+            populateGrid();
             connectionTextView.setVisibility(View.GONE);
+        } else {
+            connectionTextView.setVisibility(View.VISIBLE);
         }
+
+        mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
     }
 
     @Override
@@ -81,7 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (isConnected()) {
+        if (!isConnected() & (item.getItemId() == R.id.most_popular || item.getItemId() == R.id.highest_rated)) {
+            connectionTextView.setVisibility(View.VISIBLE);
+        } else {
             connectionTextView.setVisibility(View.GONE);
             if (item.getItemId() == R.id.most_popular) {
                 sort_param = "popular";
@@ -89,11 +92,11 @@ public class MainActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.highest_rated) {
                 sort_param = "top_rated";
                 populateGrid();
+            } else if (item.getItemId() == R.id.favorites) {
+                populateGridWithFavorites();
             } else {
                 return super.onOptionsItemSelected(item);
             }
-        } else {
-            connectionTextView.setVisibility(View.VISIBLE);
         }
         return true;
     }
@@ -128,11 +131,30 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isConnected() {
         ConnectivityManager cm =
-                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+                (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         boolean isConnected = activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
         return isConnected;
-    };
+    }
+
+    private void populateGridWithFavorites() {
+        LiveData<List<Movie>> favoriteMoviesList = mMovieRoomDatabase.movieDao().getAllMovies();
+        favoritesPicturePathList = new ArrayList<>();
+        mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
+        for (int i = 0; i < mMovieRoomDatabase.movieDao().getPosterPath().size(); i++) {
+            favoritesPicturePathList.add(IMAGE_BASE_URL + mMovieRoomDatabase.movieDao().getPosterPath().get(i));
+        }
+            recyclerView = findViewById(R.id.rv_movies);
+            gridLayoutManager = new GridLayoutManager(this, 2);
+            recyclerView.setLayoutManager(gridLayoutManager);
+            favoriteMoviesList.observe(this, new Observer<List<Movie>>() {
+                @Override
+                public void onChanged(@Nullable List<Movie> favorites) {
+                    favoritesAdapter = new FavoritesAdapter(MainActivity.this, favoritesPicturePathList, favorites);
+                    recyclerView.setAdapter(favoritesAdapter);
+                }
+            });
+    }
 }
