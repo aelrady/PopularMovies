@@ -40,7 +40,8 @@ public class FavoritesActivity extends AppCompatActivity {
 
         populateDetailActivity();
 
-        id = movie.getId();
+        Intent intent = getIntent();
+        id = intent.getIntExtra("movie_id", 0);
         ids = mMovieRoomDatabase.movieDao().getIds();
         if (isInDatabase(ids, id)) {
             star.setImageResource(R.drawable.ic_star_yellow_24dp);
@@ -50,8 +51,8 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void populateDetailActivity() {
         Intent intent = getIntent();
-        movie = intent.getParcelableExtra("movie");
-        Log.v("Movies: ", String.valueOf(movie));
+        id = intent.getIntExtra("movie_id", 0);
+        movie = mMovieRoomDatabase.movieDao().getMovieDetails(id);
 
         String moviePosterUrl = movie.getPosterPath();
         String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;

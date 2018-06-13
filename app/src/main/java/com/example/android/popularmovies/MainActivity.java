@@ -141,20 +141,20 @@ public class MainActivity extends AppCompatActivity {
 
     private void populateGridWithFavorites() {
         LiveData<List<Movie>> favoriteMoviesList = mMovieRoomDatabase.movieDao().getAllMovies();
-        favoritesPicturePathList = new ArrayList<>();
-        mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
-        for (int i = 0; i < mMovieRoomDatabase.movieDao().getPosterPath().size(); i++) {
-            favoritesPicturePathList.add(IMAGE_BASE_URL + mMovieRoomDatabase.movieDao().getPosterPath().get(i));
-        }
-            recyclerView = findViewById(R.id.rv_movies);
-            gridLayoutManager = new GridLayoutManager(this, 2);
-            recyclerView.setLayoutManager(gridLayoutManager);
-            favoriteMoviesList.observe(this, new Observer<List<Movie>>() {
-                @Override
-                public void onChanged(@Nullable List<Movie> favorites) {
-                    favoritesAdapter = new FavoritesAdapter(MainActivity.this, favoritesPicturePathList, favorites);
-                    recyclerView.setAdapter(favoritesAdapter);
+        recyclerView = findViewById(R.id.rv_movies);
+        gridLayoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        favoriteMoviesList.observe(this, new Observer<List<Movie>>() {
+            @Override
+            public void onChanged(@Nullable List<Movie> favorites) {
+                favoritesPicturePathList = new ArrayList<>();
+                mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
+                for (int i = 0; i < mMovieRoomDatabase.movieDao().getPosterPath().size(); i++) {
+                    favoritesPicturePathList.add(IMAGE_BASE_URL + mMovieRoomDatabase.movieDao().getPosterPath().get(i));
                 }
-            });
+                favoritesAdapter = new FavoritesAdapter(MainActivity.this, favoritesPicturePathList, favorites);
+                recyclerView.setAdapter(favoritesAdapter);
+            }
+        });
     }
 }

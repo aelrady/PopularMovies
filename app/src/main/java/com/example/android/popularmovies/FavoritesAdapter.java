@@ -57,9 +57,8 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, FavoritesActivity.class);
-                intent.putExtra("movie", mMovies.get(position));
+                intent.putExtra("movie_id", mMovies.get(position).getId());
                 mContext.startActivity(intent);
-
             }
         });
     }

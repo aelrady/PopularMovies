@@ -24,6 +24,9 @@ public interface MovieDao {
     @Query("SELECT poster_path FROM movies")
     List<String> getPosterPath();
 
+    @Query("SELECT id, poster_path, title, release_date, vote_average, overview FROM movies WHERE id = :id LIMIT 1")
+    Movie getMovieDetails(int id);
+
     @Insert
     void insert(Movie movie);
 
