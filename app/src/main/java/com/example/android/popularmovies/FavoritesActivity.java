@@ -19,13 +19,12 @@ import butterknife.ButterKnife;
 public class FavoritesActivity extends AppCompatActivity {
 
     private static final String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w185";
-    private Movie movie;
+    @BindView(R.id.star)
+    ImageView star;
     private MovieRoomDatabase mMovieRoomDatabase;
-
-    int id;
-    int[] ids;
-
-    @BindView(R.id.star) ImageView star;
+    private Movie movie;
+    private int id;
+    private int[] ids;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,42 +39,53 @@ public class FavoritesActivity extends AppCompatActivity {
 
         populateDetailActivity();
 
-        Intent intent = getIntent();
-        id = intent.getIntExtra("movie_id", 0);
-        ids = mMovieRoomDatabase.movieDao().getIds();
-        if (isInDatabase(ids, id)) {
-            star.setImageResource(R.drawable.ic_star_yellow_24dp);
-        }
         updateFavorites();
+
+        setStarColor();
     }
+
 
     private void populateDetailActivity() {
-        Intent intent = getIntent();
-        id = intent.getIntExtra("movie_id", 0);
-        movie = mMovieRoomDatabase.movieDao().getMovieDetails(id);
 
-        String moviePosterUrl = movie.getPosterPath();
-        String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;
-        ImageView moviePosterImageView = findViewById(R.id.movie_poster);
-        Picasso.with(this).load(fullMoviePosterUrl).resize(385, 579).into(moviePosterImageView);
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
 
-        String title = movie.getTitle();
-        TextView titleTextView = findViewById(R.id.title);
-        titleTextView.setText(title);
+                Intent intent = getIntent();
+                id = intent.getIntExtra("movie_id", 0);
+                movie = mMovieRoomDatabase.movieDao().getMovie(id);
+                Log.v("Movie: ", String.valueOf(movie));
 
-        String date = movie.getReleaseDate();
-        TextView dateTextView = findViewById(R.id.release_date);
-        dateTextView.setText(formatDate(date));
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String moviePosterUrl = movie.getPosterPath();
+                        String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;
+                        ImageView moviePosterImageView = findViewById(R.id.movie_poster);
+                        Picasso.with(FavoritesActivity.this).load(fullMoviePosterUrl).resize(385, 579).into(moviePosterImageView);
 
-        Float rating = movie.getVoteAverage();
-        String formattedRating = formatRating(rating);
-        TextView voteTextView = findViewById(R.id.rating);
-        voteTextView.setText(formattedRating);
+                        String title = movie.getTitle();
+                        TextView titleTextView = findViewById(R.id.title);
+                        titleTextView.setText(title);
 
-        String overview = movie.getOverview();
-        TextView overviewTextView = findViewById(R.id.overview);
-        overviewTextView.setText(overview);
+                        String date = movie.getReleaseDate();
+                        TextView dateTextView = findViewById(R.id.release_date);
+                        dateTextView.setText(formatDate(date));
+
+                        Float rating = movie.getVoteAverage();
+                        String formattedRating = formatRating(rating);
+                        TextView voteTextView = findViewById(R.id.rating);
+                        voteTextView.setText(formattedRating);
+
+                        String overview = movie.getOverview();
+                        TextView overviewTextView = findViewById(R.id.overview);
+                        overviewTextView.setText(overview);
+                    }
+                });
+            }
+        });
     }
+
 
     public String formatDate(String date) {
         String[] dateComponents = date.split("-");
@@ -134,39 +144,68 @@ public class FavoritesActivity extends AppCompatActivity {
         return formattedMonth + " " + formattedDay + ", " + year;
     }
 
+
     public String formatRating(Float rating) {
         return rating + "/10";
     }
 
+
     public void updateFavorites() {
         star.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-                id = movie.getId();
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        ids = mMovieRoomDatabase.movieDao().getIds();
+                        Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
+                        if (!isInDatabase(ids, id)) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    star.setImageResource(R.drawable.ic_star_yellow_24dp);
+                                }
+                            });
+                            mMovieRoomDatabase.movieDao().insert(movie);
+                        } else {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    star.setImageResource(R.drawable.ic_star_border_black_24dp);
+                                }
+                            });
+                            mMovieRoomDatabase.movieDao().delete(movie);
+                        }
+                    }
+                });
+
+            }
+        });
+    }
+
+
+    public void setStarColor() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
                 ids = mMovieRoomDatabase.movieDao().getIds();
-                Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
-                String moviePosterUrl = movie.getPosterPath();
-                String title = movie.getTitle();
-                String date = movie.getReleaseDate();
-                Float rating = movie.getVoteAverage();
-                String overview = movie.getOverview();
-                Movie movie = new Movie(id, moviePosterUrl, title, date, rating, overview);
-                if (!isInDatabase(ids, id)) {
-                    star.setImageResource(R.drawable.ic_star_yellow_24dp);
-                    mMovieRoomDatabase.movieDao().insert(movie);
-                } else {
-                    star.setImageResource(R.drawable.ic_star_border_black_24dp);
-                    mMovieRoomDatabase.movieDao().delete(movie);
+                if (isInDatabase(ids, id)) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            star.setImageResource(R.drawable.ic_star_yellow_24dp);
+                        }
+                    });
                 }
             }
         });
     }
 
+
     public static boolean isInDatabase(final int[] ids, final int id) {
         boolean favorite = false;
-        for(int i : ids) {
-            if(i == id) {
+        for (int i : ids) {
+            if (i == id) {
                 favorite = true;
                 break;
             }

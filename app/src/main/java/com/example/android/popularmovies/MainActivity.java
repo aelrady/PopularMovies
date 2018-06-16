@@ -141,19 +141,34 @@ public class MainActivity extends AppCompatActivity {
 
     private void populateGridWithFavorites() {
         LiveData<List<Movie>> favoriteMoviesList = mMovieRoomDatabase.movieDao().getAllMovies();
-        recyclerView = findViewById(R.id.rv_movies);
-        gridLayoutManager = new GridLayoutManager(this, 2);
-        recyclerView.setLayoutManager(gridLayoutManager);
         favoriteMoviesList.observe(this, new Observer<List<Movie>>() {
             @Override
-            public void onChanged(@Nullable List<Movie> favorites) {
-                favoritesPicturePathList = new ArrayList<>();
-                mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
-                for (int i = 0; i < mMovieRoomDatabase.movieDao().getPosterPath().size(); i++) {
-                    favoritesPicturePathList.add(IMAGE_BASE_URL + mMovieRoomDatabase.movieDao().getPosterPath().get(i));
-                }
-                favoritesAdapter = new FavoritesAdapter(MainActivity.this, favoritesPicturePathList, favorites);
-                recyclerView.setAdapter(favoritesAdapter);
+            public void onChanged(@Nullable final List<Movie> favorites) {
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView = findViewById(R.id.rv_movies);
+                        gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                recyclerView.setLayoutManager(gridLayoutManager);
+                            }
+                        });
+                        favoritesPicturePathList = new ArrayList<>();
+                        mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
+                        for (int i = 0; i < favorites.size(); i++) {
+                            favoritesPicturePathList.add(IMAGE_BASE_URL + mMovieRoomDatabase.movieDao().getPosterPath().get(i));
+                        }
+                        favoritesAdapter = new FavoritesAdapter(MainActivity.this, favoritesPicturePathList, favorites);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                recyclerView.setAdapter(favoritesAdapter);
+                            }
+                        });
+                    }
+                });
             }
         });
     }

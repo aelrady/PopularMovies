@@ -38,18 +38,27 @@ public class DetailActivity extends AppCompatActivity {
     private static final String YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v=";
     private MovieRoomDatabase mMovieRoomDatabase;
 
-    int id;
-    int[] ids;
+    private int id;
+    private int[] ids;
 
-    @BindView(R.id.detail_network_exception) TextView detailNetworkExceptionTextView;
-    @BindView(R.id.trailer_1) LinearLayout trailer;
-    @BindView(R.id.trailer) TextView trailerTextView;
-    @BindView(R.id.show_more_trailers) TextView showMoreTrailersTextView;
-    @BindView(R.id.review_1) LinearLayout review;
-    @BindView(R.id.show_more_reviews) TextView showMoreReviewsTextView;
-    @BindView(R.id.review_text) TextView reviewTextView;
-    @BindView(R.id.author) TextView authorTextView;
-    @BindView(R.id.star) ImageView star;
+    @BindView(R.id.detail_network_exception)
+    TextView detailNetworkExceptionTextView;
+    @BindView(R.id.trailer_1)
+    LinearLayout trailer;
+    @BindView(R.id.trailer)
+    TextView trailerTextView;
+    @BindView(R.id.show_more_trailers)
+    TextView showMoreTrailersTextView;
+    @BindView(R.id.review_1)
+    LinearLayout review;
+    @BindView(R.id.show_more_reviews)
+    TextView showMoreReviewsTextView;
+    @BindView(R.id.review_text)
+    TextView reviewTextView;
+    @BindView(R.id.author)
+    TextView authorTextView;
+    @BindView(R.id.star)
+    ImageView star;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,23 +73,30 @@ public class DetailActivity extends AppCompatActivity {
 
         mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
 
+        Intent intent = getIntent();
+        movie = intent.getParcelableExtra("movie");
+
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                id = movie.getId();
+                ids = mMovieRoomDatabase.movieDao().getIds();
+                if (isInDatabase(ids, id)) {
+                    star.setImageResource(R.drawable.ic_star_yellow_24dp);
+                }
+            }
+        });
+
         populateDetailActivity();
 
         callTrailers();
 
         callReviews();
 
-        id = movie.getId();
-        ids = mMovieRoomDatabase.movieDao().getIds();
-        if (isInDatabase(ids, id)) {
-            star.setImageResource(R.drawable.ic_star_yellow_24dp);
-        }
         updateFavorites();
     }
 
     private void populateDetailActivity() {
-        Intent intent = getIntent();
-        movie = intent.getParcelableExtra("movie");
         Log.v("Movies: ", String.valueOf(movie));
 
         String moviePosterUrl = movie.getPosterPath();
@@ -255,33 +271,41 @@ public class DetailActivity extends AppCompatActivity {
 
     public void updateFavorites() {
         star.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-                id = movie.getId();
-                ids = mMovieRoomDatabase.movieDao().getIds();
-                Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
-                String moviePosterUrl = movie.getPosterPath();
-                String title = movie.getTitle();
-                String date = movie.getReleaseDate();
-                Float rating = movie.getVoteAverage();
-                String overview = movie.getOverview();
-                Movie movie = new Movie(id, moviePosterUrl, title, date, rating, overview);
-                if (!isInDatabase(ids, id)) {
-                        star.setImageResource(R.drawable.ic_star_yellow_24dp);
-                        mMovieRoomDatabase.movieDao().insert(movie);
-                    } else {
-                        star.setImageResource(R.drawable.ic_star_border_black_24dp);
-                        mMovieRoomDatabase.movieDao().delete(movie);
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        ids = mMovieRoomDatabase.movieDao().getIds();
+                        Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
+                        if (!isInDatabase(ids, id)) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    star.setImageResource(R.drawable.ic_star_yellow_24dp);
+                                }
+                            });
+                            mMovieRoomDatabase.movieDao().insert(movie);
+                        } else {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    star.setImageResource(R.drawable.ic_star_border_black_24dp);
+                                }
+                            });
+                            mMovieRoomDatabase.movieDao().delete(movie);
+                        }
                     }
-                }
+                });
+
+            }
         });
     }
 
     public static boolean isInDatabase(final int[] ids, final int id) {
         boolean favorite = false;
-        for(int i : ids) {
-            if(i == id) {
+        for (int i : ids) {
+            if (i == id) {
                 favorite = true;
                 break;
             }
