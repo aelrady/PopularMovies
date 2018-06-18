@@ -55,38 +55,38 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void populateDetailActivity() {
 
-                liveDataMovie = mMovieRoomDatabase.movieDao().getLiveDataMovie(id);
-                liveDataMovie.observe(this, new Observer<Movie>() {
-                    @Override
-                    public void onChanged(@Nullable Movie favoriteMovie) {
-                        liveDataMovie.removeObserver(this);
-                        Log.v("Message: ", "Receiving database update from LiveData");
+        liveDataMovie = mMovieRoomDatabase.movieDao().getLiveDataMovie(id);
+        liveDataMovie.observe(this, new Observer<Movie>() {
+            @Override
+            public void onChanged(@Nullable Movie favoriteMovie) {
+                liveDataMovie.removeObserver(this);
+                Log.v("Message: ", "Receiving database update from LiveData");
 
-                        String moviePosterUrl = favoriteMovie.getPosterPath();
-                        String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;
-                        ImageView moviePosterImageView = findViewById(R.id.movie_poster);
-                        Picasso.with(FavoritesActivity.this).load(fullMoviePosterUrl).resize(385, 579).into(moviePosterImageView);
+                String moviePosterUrl = favoriteMovie.getPosterPath();
+                String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;
+                ImageView moviePosterImageView = findViewById(R.id.movie_poster);
+                Picasso.with(FavoritesActivity.this).load(fullMoviePosterUrl).resize(385, 579).into(moviePosterImageView);
 
-                        String title = favoriteMovie.getTitle();
-                        TextView titleTextView = findViewById(R.id.title);
-                        titleTextView.setText(title);
+                String title = favoriteMovie.getTitle();
+                TextView titleTextView = findViewById(R.id.title);
+                titleTextView.setText(title);
 
-                        String date = favoriteMovie.getReleaseDate();
-                        TextView dateTextView = findViewById(R.id.release_date);
-                        dateTextView.setText(formatDate(date));
+                String date = favoriteMovie.getReleaseDate();
+                TextView dateTextView = findViewById(R.id.release_date);
+                dateTextView.setText(formatDate(date));
 
-                        Float rating = favoriteMovie.getVoteAverage();
-                        String formattedRating = formatRating(rating);
-                        TextView voteTextView = findViewById(R.id.rating);
-                        voteTextView.setText(formattedRating);
+                Float rating = favoriteMovie.getVoteAverage();
+                String formattedRating = formatRating(rating);
+                TextView voteTextView = findViewById(R.id.rating);
+                voteTextView.setText(formattedRating);
 
-                        String overview = favoriteMovie.getOverview();
-                        TextView overviewTextView = findViewById(R.id.overview);
-                        overviewTextView.setText(overview);
+                String overview = favoriteMovie.getOverview();
+                TextView overviewTextView = findViewById(R.id.overview);
+                overviewTextView.setText(overview);
 
-                    }
+            }
 
-                });
+        });
     }
 
 
@@ -154,13 +154,13 @@ public class FavoritesActivity extends AppCompatActivity {
 
 
     public void updateFavorites() {
+        movie = mMovieRoomDatabase.movieDao().getMovie(id);
         star.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                     @Override
                     public void run() {
-                        movie = mMovieRoomDatabase.movieDao().getMovie(id);
                         ids = mMovieRoomDatabase.movieDao().getIds();
                         Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
                         if (!isInDatabase(ids, id)) {
