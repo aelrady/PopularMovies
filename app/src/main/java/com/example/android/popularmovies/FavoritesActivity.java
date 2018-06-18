@@ -29,6 +29,7 @@ public class FavoritesActivity extends AppCompatActivity {
     private Movie movie;
     private int id;
     private int[] ids;
+    private LiveData<int[]> liveDataIds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,9 @@ public class FavoritesActivity extends AppCompatActivity {
 
         mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
 
+        Intent intent = getIntent();
+        id = intent.getIntExtra("movie_id", 0);
+
         populateDetailActivity();
 
         updateFavorites();
@@ -51,8 +55,6 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void populateDetailActivity() {
 
-                Intent intent = getIntent();
-                id = intent.getIntExtra("movie_id", 0);
                 liveDataMovie = mMovieRoomDatabase.movieDao().getLiveDataMovie(id);
                 liveDataMovie.observe(this, new Observer<Movie>() {
                     @Override
@@ -158,8 +160,8 @@ public class FavoritesActivity extends AppCompatActivity {
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                     @Override
                     public void run() {
-                        ids = mMovieRoomDatabase.movieDao().getIds();
                         movie = mMovieRoomDatabase.movieDao().getMovie(id);
+                        ids = mMovieRoomDatabase.movieDao().getIds();
                         Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
                         if (!isInDatabase(ids, id)) {
                             runOnUiThread(new Runnable() {
@@ -168,6 +170,9 @@ public class FavoritesActivity extends AppCompatActivity {
                                     star.setImageResource(R.drawable.ic_star_yellow_24dp);
                                 }
                             });
+                            Log.v("Movie: ", String.valueOf(movie));
+                            Log.v("ID: ", String.valueOf(id));
+                            Log.v("In database? ", String.valueOf(isInDatabase(ids, id)));
                             mMovieRoomDatabase.movieDao().insert(movie);
                         } else {
                             runOnUiThread(new Runnable() {
@@ -176,6 +181,8 @@ public class FavoritesActivity extends AppCompatActivity {
                                     star.setImageResource(R.drawable.ic_star_border_black_24dp);
                                 }
                             });
+                            Log.v("Movie: ", String.valueOf(movie));
+                            Log.v("ID: ", String.valueOf(id));
                             mMovieRoomDatabase.movieDao().delete(movie);
                         }
                     }
@@ -187,11 +194,13 @@ public class FavoritesActivity extends AppCompatActivity {
 
 
     public void setStarColor() {
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        Log.v("Message: ", "Query database to set star color");
+        liveDataIds = mMovieRoomDatabase.movieDao().getLiveDataIds();
+        liveDataIds.observe(this, new Observer<int[]>() {
             @Override
-            public void run() {
-                ids = mMovieRoomDatabase.movieDao().getIds();
-                if (isInDatabase(ids, id)) {
+            public void onChanged(@Nullable int[] ints) {
+                liveDataIds.removeObserver(this);
+                if (isInDatabase(ints, id)) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

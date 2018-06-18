@@ -24,17 +24,13 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/DetailActivity.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/DetailActivity.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/DetailActivity.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/DetailActivity.class" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -98,38 +94,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovieDao.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MovieDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FavoritesActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FavoritesActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="27" />
               <folding>
-                <element signature="e#1766#3374#0" expanded="true" />
-                <element signature="e#3373#3374#0" expanded="true" />
-                <element signature="e#5038#5039#0" expanded="true" />
-                <element signature="e#5075#5076#0" expanded="true" />
-                <element signature="e#5147#6571#0" expanded="true" />
-                <element signature="e#5303#6544#0" expanded="true" />
-                <element signature="e#5716#5981#0" expanded="true" />
-                <element signature="e#5980#5981#0" expanded="true" />
-                <element signature="e#6132#6403#0" expanded="true" />
-                <element signature="e#6402#6403#0" expanded="true" />
-                <element signature="e#6543#6544#0" expanded="true" />
-                <element signature="e#6570#6571#0" expanded="true" />
-                <element signature="e#6667#7148#0" expanded="true" />
-                <element signature="e#6879#7104#0" expanded="true" />
-                <element signature="e#7103#7104#0" expanded="true" />
-                <element signature="e#7147#7148#0" expanded="true" />
+                <element signature="e#1792#3400#0" expanded="true" />
+                <element signature="e#3399#3400#0" expanded="true" />
+                <element signature="e#5064#5065#0" expanded="true" />
+                <element signature="e#5101#5102#0" expanded="true" />
+                <element signature="e#5173#6952#0" expanded="true" />
+                <element signature="e#5329#6925#0" expanded="true" />
+                <element signature="e#5742#6007#0" expanded="true" />
+                <element signature="e#6006#6007#0" expanded="true" />
+                <element signature="e#6381#6652#0" expanded="true" />
+                <element signature="e#6651#6652#0" expanded="true" />
+                <element signature="e#6924#6925#0" expanded="true" />
+                <element signature="e#6951#6952#0" expanded="true" />
+                <element signature="e#7164#7667#0" expanded="true" />
+                <element signature="e#7398#7623#0" expanded="true" />
+                <element signature="e#7622#7623#0" expanded="true" />
+                <element signature="e#7666#7667#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,27 +134,27 @@
       <file leaf-file-name="DetailActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="140">
+              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="32" />
               <folding>
-                <element signature="e#5462#5463#0" expanded="true" />
-                <element signature="e#5499#5500#0" expanded="true" />
-                <element signature="e#6541#6851#0" expanded="true" />
-                <element signature="e#6850#6851#0" expanded="true" />
-                <element signature="e#6907#7227#0" expanded="true" />
-                <element signature="e#7226#7227#0" expanded="true" />
-                <element signature="e#8338#8655#0" expanded="true" />
-                <element signature="e#8654#8655#0" expanded="true" />
-                <element signature="e#8978#10326#0" expanded="true" />
-                <element signature="e#9134#10299#0" expanded="true" />
-                <element signature="e#9471#9736#0" expanded="true" />
-                <element signature="e#9735#9736#0" expanded="true" />
-                <element signature="e#9887#10158#0" expanded="true" />
-                <element signature="e#10157#10158#0" expanded="true" />
-                <element signature="e#10298#10299#0" expanded="true" />
-                <element signature="e#10325#10326#0" expanded="true" />
-                <element signature="e#10694#11024#0" expanded="true" />
-                <element signature="e#11023#11024#0" expanded="true" />
+                <element signature="e#5627#5628#0" expanded="true" />
+                <element signature="e#5664#5665#0" expanded="true" />
+                <element signature="e#6706#7016#0" expanded="true" />
+                <element signature="e#7015#7016#0" expanded="true" />
+                <element signature="e#7072#7392#0" expanded="true" />
+                <element signature="e#7391#7392#0" expanded="true" />
+                <element signature="e#8503#8820#0" expanded="true" />
+                <element signature="e#8819#8820#0" expanded="true" />
+                <element signature="e#9143#10491#0" expanded="true" />
+                <element signature="e#9299#10464#0" expanded="true" />
+                <element signature="e#9636#9901#0" expanded="true" />
+                <element signature="e#9900#9901#0" expanded="true" />
+                <element signature="e#10052#10323#0" expanded="true" />
+                <element signature="e#10322#10323#0" expanded="true" />
+                <element signature="e#10463#10464#0" expanded="true" />
+                <element signature="e#10490#10491#0" expanded="true" />
+                <element signature="e#11003#11319#0" expanded="true" />
+                <element signature="e#11318#11319#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,8 +163,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="1674">
+              <caret line="146" column="30" lean-forward="false" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5368#6936#0" expanded="true" />
@@ -206,7 +202,6 @@
       <find>getdata</find>
       <find>action</find>
       <find>mmovies</find>
-      <find>movie</find>
       <find>return</find>
       <find>== nu</find>
       <find>liveda</find>
@@ -215,7 +210,6 @@
       <find>extra</find>
       <find>movieroomdatabase.get</find>
       <find>livedat</find>
-      <find>obser</find>
       <find>observ</find>
       <find>intent.get</find>
       <find>runon</find>
@@ -227,8 +221,10 @@
       <find>getposterp</find>
       <find>getposter</find>
       <find>getmovie</find>
-      <find>getids</find>
       <find>livedata</find>
+      <find>obser</find>
+      <find>movie</find>
+      <find>getids</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2290,8 +2286,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieRoomDatabase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java" />
       </list>
     </option>
@@ -2776,7 +2772,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529281743339</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added LiveData&lt;Movie&gt; to Dao and FavoritesActivity">
+      <created>1529285429269</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1529285429269</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2820,7 +2823,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Popular Movies App Part 1" />
     <MESSAGE value="Popular Movies first commit" />
     <MESSAGE value="Added network exception TextView" />
     <MESSAGE value="First commit" />
@@ -2844,7 +2846,9 @@
     <MESSAGE value="Replaced getMovieDetails(int id) which returned LiveData&lt;Movie&gt; with getMovie(int id) which returns Movie to get movie to populate FavoritesActivity and used LiveData and diskIO executor to query database on background thread." />
     <MESSAGE value="Used getPosterPath() from Movie class rather than getPosterPath() from Dao and removed unused queries from Dao" />
     <MESSAGE value="Previous code restored - incorrect movies were being displayed in FavoritesActivity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Previous code restored - incorrect movies were being displayed in FavoritesActivity" />
+    <MESSAGE value="Added LiveData&lt;Movie&gt; to Dao and FavoritesActivity" />
+    <MESSAGE value="Added LiveData&lt;int[]&gt; to Dao, FavoritesActivity, and DetailActivity.  When viewing a movie in FavoritesActivity, app crashes after the movie has been removed from favorites and added back to favorites (movie returned is null)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added LiveData&lt;int[]&gt; to Dao, FavoritesActivity, and DetailActivity.  When viewing a movie in FavoritesActivity, app crashes after the movie has been removed from favorites and added back to favorites (movie returned is null)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2872,24 +2876,24 @@
         <state relative-caret-position="105">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#5462#5463#0" expanded="true" />
-            <element signature="e#5499#5500#0" expanded="true" />
-            <element signature="e#6541#6851#0" expanded="true" />
-            <element signature="e#6850#6851#0" expanded="true" />
-            <element signature="e#6907#7227#0" expanded="true" />
-            <element signature="e#7226#7227#0" expanded="true" />
-            <element signature="e#8338#8655#0" expanded="true" />
-            <element signature="e#8654#8655#0" expanded="true" />
-            <element signature="e#8978#10326#0" expanded="true" />
-            <element signature="e#9134#10299#0" expanded="true" />
-            <element signature="e#9471#9736#0" expanded="true" />
-            <element signature="e#9735#9736#0" expanded="true" />
-            <element signature="e#9887#10158#0" expanded="true" />
-            <element signature="e#10157#10158#0" expanded="true" />
-            <element signature="e#10298#10299#0" expanded="true" />
-            <element signature="e#10325#10326#0" expanded="true" />
-            <element signature="e#10694#11024#0" expanded="true" />
-            <element signature="e#11023#11024#0" expanded="true" />
+            <element signature="e#5627#5628#0" expanded="true" />
+            <element signature="e#5664#5665#0" expanded="true" />
+            <element signature="e#6706#7016#0" expanded="true" />
+            <element signature="e#7015#7016#0" expanded="true" />
+            <element signature="e#7072#7392#0" expanded="true" />
+            <element signature="e#7391#7392#0" expanded="true" />
+            <element signature="e#8503#8820#0" expanded="true" />
+            <element signature="e#8819#8820#0" expanded="true" />
+            <element signature="e#9143#10491#0" expanded="true" />
+            <element signature="e#9299#10464#0" expanded="true" />
+            <element signature="e#9636#9901#0" expanded="true" />
+            <element signature="e#9900#9901#0" expanded="true" />
+            <element signature="e#10052#10323#0" expanded="true" />
+            <element signature="e#10322#10323#0" expanded="true" />
+            <element signature="e#10463#10464#0" expanded="true" />
+            <element signature="e#10490#10491#0" expanded="true" />
+            <element signature="e#11003#11319#0" expanded="true" />
+            <element signature="e#11318#11319#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2934,24 +2938,24 @@
         <state relative-caret-position="105">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#5462#5463#0" expanded="true" />
-            <element signature="e#5499#5500#0" expanded="true" />
-            <element signature="e#6541#6851#0" expanded="true" />
-            <element signature="e#6850#6851#0" expanded="true" />
-            <element signature="e#6907#7227#0" expanded="true" />
-            <element signature="e#7226#7227#0" expanded="true" />
-            <element signature="e#8338#8655#0" expanded="true" />
-            <element signature="e#8654#8655#0" expanded="true" />
-            <element signature="e#8978#10326#0" expanded="true" />
-            <element signature="e#9134#10299#0" expanded="true" />
-            <element signature="e#9471#9736#0" expanded="true" />
-            <element signature="e#9735#9736#0" expanded="true" />
-            <element signature="e#9887#10158#0" expanded="true" />
-            <element signature="e#10157#10158#0" expanded="true" />
-            <element signature="e#10298#10299#0" expanded="true" />
-            <element signature="e#10325#10326#0" expanded="true" />
-            <element signature="e#10694#11024#0" expanded="true" />
-            <element signature="e#11023#11024#0" expanded="true" />
+            <element signature="e#5627#5628#0" expanded="true" />
+            <element signature="e#5664#5665#0" expanded="true" />
+            <element signature="e#6706#7016#0" expanded="true" />
+            <element signature="e#7015#7016#0" expanded="true" />
+            <element signature="e#7072#7392#0" expanded="true" />
+            <element signature="e#7391#7392#0" expanded="true" />
+            <element signature="e#8503#8820#0" expanded="true" />
+            <element signature="e#8819#8820#0" expanded="true" />
+            <element signature="e#9143#10491#0" expanded="true" />
+            <element signature="e#9299#10464#0" expanded="true" />
+            <element signature="e#9636#9901#0" expanded="true" />
+            <element signature="e#9900#9901#0" expanded="true" />
+            <element signature="e#10052#10323#0" expanded="true" />
+            <element signature="e#10322#10323#0" expanded="true" />
+            <element signature="e#10463#10464#0" expanded="true" />
+            <element signature="e#10490#10491#0" expanded="true" />
+            <element signature="e#11003#11319#0" expanded="true" />
+            <element signature="e#11318#11319#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3299,14 +3303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/android/popularmovies/database/MovieDao_Impl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -3323,45 +3319,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java">
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/android/popularmovies/database/MovieDao_Impl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="125">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="27" />
+          <folding>
+            <element signature="e#1792#3400#0" expanded="true" />
+            <element signature="e#3399#3400#0" expanded="true" />
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5101#5102#0" expanded="true" />
+            <element signature="e#5173#6952#0" expanded="true" />
+            <element signature="e#5329#6925#0" expanded="true" />
+            <element signature="e#5742#6007#0" expanded="true" />
+            <element signature="e#6006#6007#0" expanded="true" />
+            <element signature="e#6381#6652#0" expanded="true" />
+            <element signature="e#6651#6652#0" expanded="true" />
+            <element signature="e#6924#6925#0" expanded="true" />
+            <element signature="e#6951#6952#0" expanded="true" />
+            <element signature="e#7164#7667#0" expanded="true" />
+            <element signature="e#7398#7623#0" expanded="true" />
+            <element signature="e#7622#7623#0" expanded="true" />
+            <element signature="e#7666#7667#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="140">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="32" />
           <folding>
-            <element signature="e#5462#5463#0" expanded="true" />
-            <element signature="e#5499#5500#0" expanded="true" />
-            <element signature="e#6541#6851#0" expanded="true" />
-            <element signature="e#6850#6851#0" expanded="true" />
-            <element signature="e#6907#7227#0" expanded="true" />
-            <element signature="e#7226#7227#0" expanded="true" />
-            <element signature="e#8338#8655#0" expanded="true" />
-            <element signature="e#8654#8655#0" expanded="true" />
-            <element signature="e#8978#10326#0" expanded="true" />
-            <element signature="e#9134#10299#0" expanded="true" />
-            <element signature="e#9471#9736#0" expanded="true" />
-            <element signature="e#9735#9736#0" expanded="true" />
-            <element signature="e#9887#10158#0" expanded="true" />
-            <element signature="e#10157#10158#0" expanded="true" />
-            <element signature="e#10298#10299#0" expanded="true" />
-            <element signature="e#10325#10326#0" expanded="true" />
-            <element signature="e#10694#11024#0" expanded="true" />
-            <element signature="e#11023#11024#0" expanded="true" />
+            <element signature="e#5627#5628#0" expanded="true" />
+            <element signature="e#5664#5665#0" expanded="true" />
+            <element signature="e#6706#7016#0" expanded="true" />
+            <element signature="e#7015#7016#0" expanded="true" />
+            <element signature="e#7072#7392#0" expanded="true" />
+            <element signature="e#7391#7392#0" expanded="true" />
+            <element signature="e#8503#8820#0" expanded="true" />
+            <element signature="e#8819#8820#0" expanded="true" />
+            <element signature="e#9143#10491#0" expanded="true" />
+            <element signature="e#9299#10464#0" expanded="true" />
+            <element signature="e#9636#9901#0" expanded="true" />
+            <element signature="e#9900#9901#0" expanded="true" />
+            <element signature="e#10052#10323#0" expanded="true" />
+            <element signature="e#10322#10323#0" expanded="true" />
+            <element signature="e#10463#10464#0" expanded="true" />
+            <element signature="e#10490#10491#0" expanded="true" />
+            <element signature="e#11003#11319#0" expanded="true" />
+            <element signature="e#11318#11319#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state relative-caret-position="1674">
+          <caret line="146" column="30" lean-forward="false" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5368#6936#0" expanded="true" />
@@ -3376,28 +3397,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#1766#3374#0" expanded="true" />
-            <element signature="e#3373#3374#0" expanded="true" />
-            <element signature="e#5038#5039#0" expanded="true" />
-            <element signature="e#5075#5076#0" expanded="true" />
-            <element signature="e#5147#6571#0" expanded="true" />
-            <element signature="e#5303#6544#0" expanded="true" />
-            <element signature="e#5716#5981#0" expanded="true" />
-            <element signature="e#5980#5981#0" expanded="true" />
-            <element signature="e#6132#6403#0" expanded="true" />
-            <element signature="e#6402#6403#0" expanded="true" />
-            <element signature="e#6543#6544#0" expanded="true" />
-            <element signature="e#6570#6571#0" expanded="true" />
-            <element signature="e#6667#7148#0" expanded="true" />
-            <element signature="e#6879#7104#0" expanded="true" />
-            <element signature="e#7103#7104#0" expanded="true" />
-            <element signature="e#7147#7148#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

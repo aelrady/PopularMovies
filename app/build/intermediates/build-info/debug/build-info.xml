@@ -5,28 +5,25 @@
     build-mode="COLD"
     density="xxxhdpi"
     format="10"
-    ir-eligibility="CLASS_ADDED"
+    ir-eligibility="METHOD_DELETED"
     plugin-version="3.1.0"
-    timestamp="1529285272679"
+    timestamp="1529288344388"
     token="813178595188613925"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="8427" />
+        duration="7060" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="513" />
+        duration="498" />
     <task
         name="verifier"
-        duration="22" />
+        duration="9" />
 
-    <artifact
-        location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-        type="SPLIT" />
     <artifact
         location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
         type="SPLIT" />
@@ -80,6 +77,12 @@
         <artifact
             location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_DELETED"
+        timestamp="1529288344388"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/ashleyelrady/AndroidStudioProjects/PopularMovies/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />

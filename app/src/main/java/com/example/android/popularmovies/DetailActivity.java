@@ -1,8 +1,11 @@
 package com.example.android.popularmovies;
 
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -40,6 +43,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private int id;
     private int[] ids;
+    private LiveData<int[]> liveDataIds;
 
     @BindView(R.id.detail_network_exception)
     TextView detailNetworkExceptionTextView;
@@ -305,12 +309,14 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void setStarColor() {
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        Log.v("Message: ", "Query database to set star color");
+        id = movie.getId();
+        liveDataIds = mMovieRoomDatabase.movieDao().getLiveDataIds();
+        liveDataIds.observe(this, new Observer<int[]>() {
             @Override
-            public void run() {
-                id = movie.getId();
-                ids = mMovieRoomDatabase.movieDao().getIds();
-                if (isInDatabase(ids, id)) {
+            public void onChanged(@Nullable int[] ints) {
+                liveDataIds.removeObserver(this);
+                if (isInDatabase(ints, id)) {
                     star.setImageResource(R.drawable.ic_star_yellow_24dp);
                 }
             }
