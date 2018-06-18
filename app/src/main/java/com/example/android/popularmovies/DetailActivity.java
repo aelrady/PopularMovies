@@ -76,17 +76,6 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         movie = intent.getParcelableExtra("movie");
 
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                id = movie.getId();
-                ids = mMovieRoomDatabase.movieDao().getIds();
-                if (isInDatabase(ids, id)) {
-                    star.setImageResource(R.drawable.ic_star_yellow_24dp);
-                }
-            }
-        });
-
         populateDetailActivity();
 
         callTrailers();
@@ -94,6 +83,8 @@ public class DetailActivity extends AppCompatActivity {
         callReviews();
 
         updateFavorites();
+
+        setStarColor();
     }
 
     private void populateDetailActivity() {
@@ -311,5 +302,18 @@ public class DetailActivity extends AppCompatActivity {
             }
         }
         return favorite;
+    }
+
+    public void setStarColor() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                id = movie.getId();
+                ids = mMovieRoomDatabase.movieDao().getIds();
+                if (isInDatabase(ids, id)) {
+                    star.setImageResource(R.drawable.ic_star_yellow_24dp);
+                }
+            }
+        });
     }
 }

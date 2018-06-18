@@ -1,7 +1,10 @@
 package com.example.android.popularmovies;
 
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,6 +25,7 @@ public class FavoritesActivity extends AppCompatActivity {
     @BindView(R.id.star)
     ImageView star;
     private MovieRoomDatabase mMovieRoomDatabase;
+    private LiveData<Movie> liveDataMovie;
     private Movie movie;
     private int id;
     private int[] ids;
@@ -47,43 +51,40 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void populateDetailActivity() {
 
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-
                 Intent intent = getIntent();
                 id = intent.getIntExtra("movie_id", 0);
-                movie = mMovieRoomDatabase.movieDao().getMovie(id);
-                Log.v("Movie: ", String.valueOf(movie));
-
-                runOnUiThread(new Runnable() {
+                liveDataMovie = mMovieRoomDatabase.movieDao().getLiveDataMovie(id);
+                liveDataMovie.observe(this, new Observer<Movie>() {
                     @Override
-                    public void run() {
-                        String moviePosterUrl = movie.getPosterPath();
+                    public void onChanged(@Nullable Movie favoriteMovie) {
+                        liveDataMovie.removeObserver(this);
+                        Log.v("Message: ", "Receiving database update from LiveData");
+
+                        String moviePosterUrl = favoriteMovie.getPosterPath();
                         String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;
                         ImageView moviePosterImageView = findViewById(R.id.movie_poster);
                         Picasso.with(FavoritesActivity.this).load(fullMoviePosterUrl).resize(385, 579).into(moviePosterImageView);
 
-                        String title = movie.getTitle();
+                        String title = favoriteMovie.getTitle();
                         TextView titleTextView = findViewById(R.id.title);
                         titleTextView.setText(title);
 
-                        String date = movie.getReleaseDate();
+                        String date = favoriteMovie.getReleaseDate();
                         TextView dateTextView = findViewById(R.id.release_date);
                         dateTextView.setText(formatDate(date));
 
-                        Float rating = movie.getVoteAverage();
+                        Float rating = favoriteMovie.getVoteAverage();
                         String formattedRating = formatRating(rating);
                         TextView voteTextView = findViewById(R.id.rating);
                         voteTextView.setText(formattedRating);
 
-                        String overview = movie.getOverview();
+                        String overview = favoriteMovie.getOverview();
                         TextView overviewTextView = findViewById(R.id.overview);
                         overviewTextView.setText(overview);
+
                     }
+
                 });
-            }
-        });
     }
 
 
@@ -158,6 +159,7 @@ public class FavoritesActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         ids = mMovieRoomDatabase.movieDao().getIds();
+                        movie = mMovieRoomDatabase.movieDao().getMovie(id);
                         Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
                         if (!isInDatabase(ids, id)) {
                             runOnUiThread(new Runnable() {
