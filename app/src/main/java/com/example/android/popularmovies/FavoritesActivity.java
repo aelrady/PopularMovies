@@ -44,6 +44,7 @@ public class FavoritesActivity extends AppCompatActivity {
         setStarColor();
     }
 
+
     private void populateDetailActivity() {
 
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -196,7 +197,6 @@ public class FavoritesActivity extends AppCompatActivity {
                         }
                     });
                 }
-                Log.v("Message: :", "Query for IDs");
             }
         });
     }
@@ -211,11 +211,5 @@ public class FavoritesActivity extends AppCompatActivity {
             }
         }
         return favorite;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putIntArray("ids", ids);
-        super.onSaveInstanceState(outState);
     }
 }
