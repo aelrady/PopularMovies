@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -144,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
         favoriteMoviesList.observe(this, new Observer<List<Movie>>() {
             @Override
             public void onChanged(@Nullable final List<Movie> favorites) {
+                Log.v("Message: ", "Retrieving movies from database");
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                     @Override
                     public void run() {
@@ -158,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                         favoritesPicturePathList = new ArrayList<>();
                         mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());
                         for (int i = 0; i < favorites.size(); i++) {
-                            favoritesPicturePathList.add(IMAGE_BASE_URL + mMovieRoomDatabase.movieDao().getPosterPath().get(i));
+                            favoritesPicturePathList.add(IMAGE_BASE_URL + movies.get(i).getPosterPath());
                         }
                         favoritesAdapter = new FavoritesAdapter(MainActivity.this, favoritesPicturePathList, favorites);
                         runOnUiThread(new Runnable() {
