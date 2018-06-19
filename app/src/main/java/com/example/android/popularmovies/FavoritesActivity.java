@@ -26,10 +26,20 @@ public class FavoritesActivity extends AppCompatActivity {
     ImageView star;
     private MovieRoomDatabase mMovieRoomDatabase;
     private LiveData<Movie> liveDataMovie;
-    private Movie movie;
     private int id;
     private int[] ids;
     private LiveData<int[]> liveDataIds;
+
+    public static boolean isInDatabase(final int[] ids, final int id) {
+        boolean favorite = false;
+        for (int i : ids) {
+            if (i == id) {
+                favorite = true;
+                break;
+            }
+        }
+        return favorite;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,18 +57,15 @@ public class FavoritesActivity extends AppCompatActivity {
 
         populateDetailActivity();
 
-        updateFavorites();
-
         setStarColor();
     }
-
 
     private void populateDetailActivity() {
 
         liveDataMovie = mMovieRoomDatabase.movieDao().getLiveDataMovie(id);
         liveDataMovie.observe(this, new Observer<Movie>() {
             @Override
-            public void onChanged(@Nullable Movie favoriteMovie) {
+            public void onChanged(@Nullable final Movie favoriteMovie) {
                 liveDataMovie.removeObserver(this);
                 Log.v("Message: ", "Receiving database update from LiveData");
 
@@ -84,11 +91,41 @@ public class FavoritesActivity extends AppCompatActivity {
                 TextView overviewTextView = findViewById(R.id.overview);
                 overviewTextView.setText(overview);
 
+                star.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                ids = mMovieRoomDatabase.movieDao().getIds();
+                                Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
+                                if (!isInDatabase(ids, id)) {
+                                    mMovieRoomDatabase.movieDao().insert(favoriteMovie);
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            star.setImageResource(R.drawable.ic_star_yellow_24dp);
+                                        }
+                                    });
+                                } else {
+                                    mMovieRoomDatabase.movieDao().delete(favoriteMovie);
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            star.setImageResource(R.drawable.ic_star_border_black_24dp);
+                                        }
+                                    });
+                                }
+                            }
+                        });
+
+                    }
+                });
+
             }
 
         });
     }
-
 
     public String formatDate(String date) {
         String[] dateComponents = date.split("-");
@@ -147,51 +184,9 @@ public class FavoritesActivity extends AppCompatActivity {
         return formattedMonth + " " + formattedDay + ", " + year;
     }
 
-
     public String formatRating(Float rating) {
         return rating + "/10";
     }
-
-
-    public void updateFavorites() {
-        movie = mMovieRoomDatabase.movieDao().getMovie(id);
-        star.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        ids = mMovieRoomDatabase.movieDao().getIds();
-                        Log.v("Favorite: ", String.valueOf(isInDatabase(ids, id)));
-                        if (!isInDatabase(ids, id)) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    star.setImageResource(R.drawable.ic_star_yellow_24dp);
-                                }
-                            });
-                            Log.v("Movie: ", String.valueOf(movie));
-                            Log.v("ID: ", String.valueOf(id));
-                            Log.v("In database? ", String.valueOf(isInDatabase(ids, id)));
-                            mMovieRoomDatabase.movieDao().insert(movie);
-                        } else {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    star.setImageResource(R.drawable.ic_star_border_black_24dp);
-                                }
-                            });
-                            Log.v("Movie: ", String.valueOf(movie));
-                            Log.v("ID: ", String.valueOf(id));
-                            mMovieRoomDatabase.movieDao().delete(movie);
-                        }
-                    }
-                });
-
-            }
-        });
-    }
-
 
     public void setStarColor() {
         Log.v("Message: ", "Query database to set star color");
@@ -210,17 +205,5 @@ public class FavoritesActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-
-    public static boolean isInDatabase(final int[] ids, final int id) {
-        boolean favorite = false;
-        for (int i : ids) {
-            if (i == id) {
-                favorite = true;
-                break;
-            }
-        }
-        return favorite;
     }
 }
