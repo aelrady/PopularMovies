@@ -1,7 +1,7 @@
 package com.example.android.popularmovies;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -140,10 +141,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void populateGridWithFavorites() {
-        LiveData<List<Movie>> favoriteMoviesList = mMovieRoomDatabase.movieDao().getAllMovies();
-        favoriteMoviesList.observe(this, new Observer<List<Movie>>() {
+        MoviesViewModel viewModel = ViewModelProviders.of(this).get(MoviesViewModel.class);
+        viewModel.getMovies().observe(this, new Observer<List<Movie>>() {
             @Override
             public void onChanged(@Nullable final List<Movie> favorites) {
+                Log.v("ViewModel Message: ", "Updating movies from LiveData in ViewModel");
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                     @Override
                     public void run() {

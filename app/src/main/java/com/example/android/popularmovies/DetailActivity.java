@@ -2,6 +2,7 @@ package com.example.android.popularmovies;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -309,13 +310,11 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void setStarColor() {
-        Log.v("Message: ", "Query database to set star color");
         id = movie.getId();
-        liveDataIds = mMovieRoomDatabase.movieDao().getLiveDataIds();
-        liveDataIds.observe(this, new Observer<int[]>() {
+        IdsViewModel viewModel = ViewModelProviders.of(this).get(IdsViewModel.class);
+        viewModel.getIds().observe(this, new Observer<int[]>() {
             @Override
             public void onChanged(@Nullable int[] ints) {
-                liveDataIds.removeObserver(this);
                 if (isInDatabase(ints, id)) {
                     star.setImageResource(R.drawable.ic_star_yellow_24dp);
                 }

@@ -25,9 +25,6 @@ public interface MovieDao {
     @Query("SELECT id, poster_path, title, release_date, vote_average, overview FROM movies WHERE id = :id LIMIT 1")
     LiveData<Movie> getLiveDataMovie(int id);
 
-    @Query("SELECT id, poster_path, title, release_date, vote_average, overview FROM movies WHERE id = :id LIMIT 1")
-    Movie getMovie(int id);
-
     @Query("SELECT poster_path FROM movies")
     List<String> getPosterPath();
 

@@ -6,23 +6,49 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="viewmodel" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3271882d-7bff-4697-82eb-5b6a435112eb" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/IdsViewModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieViewModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieViewModelFactory.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MoviesViewModel.java" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/DetailActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/MainActivity$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/popularmovies/MainActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/DetailActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/MainActivity$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/popularmovies/MainActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieRoomDatabase.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieRoomDatabase.java" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/DetailActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/MainActivity$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/popularmovies/MainActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/DetailActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/MainActivity$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/popularmovies/MainActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,110 +102,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MovieAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovieDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FavoritesActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="57" column="33" lean-forward="false" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+            <state relative-caret-position="1080">
+              <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1995#5057#0" expanded="true" />
-                <element signature="e#3441#5029#0" expanded="true" />
-                <element signature="e#3621#4986#0" expanded="true" />
-                <element signature="e#4095#4400#0" expanded="true" />
-                <element signature="e#4399#4400#0" expanded="true" />
-                <element signature="e#4583#4894#0" expanded="true" />
-                <element signature="e#4893#4894#0" expanded="true" />
-                <element signature="e#4985#4986#0" expanded="true" />
-                <element signature="e#5028#5029#0" expanded="true" />
-                <element signature="e#5056#5057#0" expanded="true" />
-                <element signature="e#6719#6720#0" expanded="true" />
-                <element signature="e#6756#6757#0" expanded="true" />
-                <element signature="e#6960#7463#0" expanded="true" />
-                <element signature="e#7194#7419#0" expanded="true" />
-                <element signature="e#7418#7419#0" expanded="true" />
-                <element signature="e#7462#7463#0" expanded="true" />
+                <element signature="e#2172#5162#0" expanded="true" />
+                <element signature="e#3546#5134#0" expanded="true" />
+                <element signature="e#3726#5091#0" expanded="true" />
+                <element signature="e#4200#4505#0" expanded="true" />
+                <element signature="e#4504#4505#0" expanded="true" />
+                <element signature="e#4688#4999#0" expanded="true" />
+                <element signature="e#4998#4999#0" expanded="true" />
+                <element signature="e#5090#5091#0" expanded="true" />
+                <element signature="e#5133#5134#0" expanded="true" />
+                <element signature="e#5161#5162#0" expanded="true" />
+                <element signature="e#6824#6825#0" expanded="true" />
+                <element signature="e#6861#6862#0" expanded="true" />
+                <element signature="e#7024#7477#0" expanded="true" />
+                <element signature="e#7208#7433#0" expanded="true" />
+                <element signature="e#7432#7433#0" expanded="true" />
+                <element signature="e#7476#7477#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovieRoomDatabase.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieRoomDatabase.java">
+      <file leaf-file-name="MovieDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="20" column="66" lean-forward="false" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+            <state relative-caret-position="171">
+              <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5627#5628#0" expanded="true" />
-                <element signature="e#5664#5665#0" expanded="true" />
-                <element signature="e#6706#7016#0" expanded="true" />
-                <element signature="e#7015#7016#0" expanded="true" />
-                <element signature="e#7072#7392#0" expanded="true" />
-                <element signature="e#7391#7392#0" expanded="true" />
-                <element signature="e#8503#8820#0" expanded="true" />
-                <element signature="e#8819#8820#0" expanded="true" />
-                <element signature="e#9143#10491#0" expanded="true" />
-                <element signature="e#9299#10464#0" expanded="true" />
-                <element signature="e#9636#9901#0" expanded="true" />
-                <element signature="e#9900#9901#0" expanded="true" />
-                <element signature="e#10052#10323#0" expanded="true" />
-                <element signature="e#10322#10323#0" expanded="true" />
-                <element signature="e#10463#10464#0" expanded="true" />
-                <element signature="e#10490#10491#0" expanded="true" />
-                <element signature="e#11003#11319#0" expanded="true" />
-                <element signature="e#11318#11319#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1008">
-              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5368#6936#0" expanded="true" />
-                <element signature="e#5555#6910#0" expanded="true" />
-                <element signature="e#5838#6078#0" expanded="true" />
-                <element signature="e#6077#6078#0" expanded="true" />
-                <element signature="e#6635#6868#0" expanded="true" />
-                <element signature="e#6867#6868#0" expanded="true" />
-                <element signature="e#6909#6910#0" expanded="true" />
-                <element signature="e#6935#6936#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -199,7 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>item</find>
       <find>adapter</find>
       <find>getdata</find>
       <find>action</find>
@@ -211,7 +166,6 @@
       <find>id</find>
       <find>extra</find>
       <find>movieroomdatabase.get</find>
-      <find>livedat</find>
       <find>observ</find>
       <find>intent.get</find>
       <find>runon</find>
@@ -221,14 +175,16 @@
       <find>ids</find>
       <find>getpos</find>
       <find>getposterp</find>
-      <find>getposter</find>
       <find>getmovie</find>
-      <find>livedata</find>
       <find>obser</find>
       <find>movie</find>
       <find>getids</find>
       <find>mmo</find>
       <find>movie =</find>
+      <find>getposter</find>
+      <find>setup</find>
+      <find>livedata</find>
+      <find>livedat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2287,18 +2243,22 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/AppExecutors.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieRoomDatabase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MoviesViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/IdsViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieViewModelFactory.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="14" />
-    <option name="y" value="29" />
+    <option name="x" value="11" />
+    <option name="y" value="23" />
     <option name="width" value="1243" />
     <option name="height" value="703" />
   </component>
@@ -2345,13 +2305,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="popularmovies" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PopularMovies" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="popularmovies" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PopularMovies" type="1abcf292:AndroidViewProjectNode" />
@@ -2804,11 +2757,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529386976033</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Removed allowMainThreadQueries() from MovieRoomDatabase">
+      <created>1529387460305</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1529387460305</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="29" width="1243" height="703" extended-state="0" />
+    <frame x="11" y="23" width="1243" height="703" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2821,7 +2781,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23433875" sideWeight="0.494863" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.49657536" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21196581" sideWeight="0.49503312" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2786325" sideWeight="0.49503312" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2848,8 +2808,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First commit" />
-    <MESSAGE value="Test commit and push" />
     <MESSAGE value="Implemented suggestions from Part 1 project review" />
     <MESSAGE value="Added calls for getVideos and getReviews to MovieApiInterface" />
     <MESSAGE value="Detail activity layout changes to include views for trailer and reviews" />
@@ -2873,76 +2831,15 @@
     <MESSAGE value="Added LiveData&lt;int[]&gt; to Dao, FavoritesActivity, and DetailActivity.  When viewing a movie in FavoritesActivity, app crashes after the movie has been removed from favorites and added back to favorites (movie returned is null)." />
     <MESSAGE value="Updated updateFavorites to fix thread-pool/NullPointer exception" />
     <MESSAGE value="Fixed errors in FavoritesActivity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors in FavoritesActivity" />
+    <MESSAGE value="Removed allowMainThreadQueries() from MovieRoomDatabase" />
+    <MESSAGE value="Added ViewModel so that database is not queried again on rotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ViewModel so that database is not queried again on rotation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/model/MovieResults.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5627#5628#0" expanded="true" />
-            <element signature="e#5664#5665#0" expanded="true" />
-            <element signature="e#6706#7016#0" expanded="true" />
-            <element signature="e#7015#7016#0" expanded="true" />
-            <element signature="e#7072#7392#0" expanded="true" />
-            <element signature="e#7391#7392#0" expanded="true" />
-            <element signature="e#8503#8820#0" expanded="true" />
-            <element signature="e#8819#8820#0" expanded="true" />
-            <element signature="e#9143#10491#0" expanded="true" />
-            <element signature="e#9299#10464#0" expanded="true" />
-            <element signature="e#9636#9901#0" expanded="true" />
-            <element signature="e#9900#9901#0" expanded="true" />
-            <element signature="e#10052#10323#0" expanded="true" />
-            <element signature="e#10322#10323#0" expanded="true" />
-            <element signature="e#10463#10464#0" expanded="true" />
-            <element signature="e#10490#10491#0" expanded="true" />
-            <element signature="e#11003#11319#0" expanded="true" />
-            <element signature="e#11318#11319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/model/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#1961#2270#0" expanded="false" />
-            <element signature="e#2269#2270#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/model/MovieResults.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -2964,25 +2861,24 @@
         <state relative-caret-position="105">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5627#5628#0" expanded="true" />
-            <element signature="e#5664#5665#0" expanded="true" />
-            <element signature="e#6706#7016#0" expanded="true" />
-            <element signature="e#7015#7016#0" expanded="true" />
-            <element signature="e#7072#7392#0" expanded="true" />
-            <element signature="e#7391#7392#0" expanded="true" />
-            <element signature="e#8503#8820#0" expanded="true" />
-            <element signature="e#8819#8820#0" expanded="true" />
-            <element signature="e#9143#10491#0" expanded="true" />
-            <element signature="e#9299#10464#0" expanded="true" />
-            <element signature="e#9636#9901#0" expanded="true" />
-            <element signature="e#9900#9901#0" expanded="true" />
-            <element signature="e#10052#10323#0" expanded="true" />
-            <element signature="e#10322#10323#0" expanded="true" />
-            <element signature="e#10463#10464#0" expanded="true" />
-            <element signature="e#10490#10491#0" expanded="true" />
-            <element signature="e#11003#11319#0" expanded="true" />
-            <element signature="e#11318#11319#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5677#5678#0" expanded="false" />
+            <element signature="e#5714#5715#0" expanded="false" />
+            <element signature="e#6756#7066#0" expanded="false" />
+            <element signature="e#7065#7066#0" expanded="false" />
+            <element signature="e#7122#7442#0" expanded="false" />
+            <element signature="e#7441#7442#0" expanded="false" />
+            <element signature="e#8553#8870#0" expanded="false" />
+            <element signature="e#8869#8870#0" expanded="false" />
+            <element signature="e#9193#10541#0" expanded="false" />
+            <element signature="e#9349#10514#0" expanded="false" />
+            <element signature="e#9686#9951#0" expanded="false" />
+            <element signature="e#9950#9951#0" expanded="false" />
+            <element signature="e#10102#10373#0" expanded="false" />
+            <element signature="e#10372#10373#0" expanded="false" />
+            <element signature="e#10513#10514#0" expanded="false" />
+            <element signature="e#10540#10541#0" expanded="false" />
+            <element signature="e#11277#11278#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3312,14 +3208,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/android/popularmovies/database/MovieDao_Impl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -3336,82 +3224,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="30">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="57" column="33" lean-forward="false" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1995#5057#0" expanded="true" />
-            <element signature="e#3441#5029#0" expanded="true" />
-            <element signature="e#3621#4986#0" expanded="true" />
-            <element signature="e#4095#4400#0" expanded="true" />
-            <element signature="e#4399#4400#0" expanded="true" />
-            <element signature="e#4583#4894#0" expanded="true" />
-            <element signature="e#4893#4894#0" expanded="true" />
-            <element signature="e#4985#4986#0" expanded="true" />
-            <element signature="e#5028#5029#0" expanded="true" />
-            <element signature="e#5056#5057#0" expanded="true" />
-            <element signature="e#6719#6720#0" expanded="true" />
-            <element signature="e#6756#6757#0" expanded="true" />
-            <element signature="e#6960#7463#0" expanded="true" />
-            <element signature="e#7194#7419#0" expanded="true" />
-            <element signature="e#7418#7419#0" expanded="true" />
-            <element signature="e#7462#7463#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="583">
+          <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MoviesViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="226">
+          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5627#5628#0" expanded="true" />
-            <element signature="e#5664#5665#0" expanded="true" />
-            <element signature="e#6706#7016#0" expanded="true" />
-            <element signature="e#7015#7016#0" expanded="true" />
-            <element signature="e#7072#7392#0" expanded="true" />
-            <element signature="e#7391#7392#0" expanded="true" />
-            <element signature="e#8503#8820#0" expanded="true" />
-            <element signature="e#8819#8820#0" expanded="true" />
-            <element signature="e#9143#10491#0" expanded="true" />
-            <element signature="e#9299#10464#0" expanded="true" />
-            <element signature="e#9636#9901#0" expanded="true" />
-            <element signature="e#9900#9901#0" expanded="true" />
-            <element signature="e#10052#10323#0" expanded="true" />
-            <element signature="e#10322#10323#0" expanded="true" />
-            <element signature="e#10463#10464#0" expanded="true" />
-            <element signature="e#10490#10491#0" expanded="true" />
-            <element signature="e#11003#11319#0" expanded="true" />
-            <element signature="e#11318#11319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1008">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5368#6936#0" expanded="true" />
-            <element signature="e#5555#6910#0" expanded="true" />
-            <element signature="e#5838#6078#0" expanded="true" />
-            <element signature="e#6077#6078#0" expanded="true" />
-            <element signature="e#6635#6868#0" expanded="true" />
-            <element signature="e#6867#6868#0" expanded="true" />
-            <element signature="e#6909#6910#0" expanded="true" />
-            <element signature="e#6935#6936#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#914#915#0" expanded="false" />
+            <element signature="e#943#944#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3420,6 +3256,111 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="20" column="66" lean-forward="false" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/DetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2883">
+          <caret line="315" column="14" lean-forward="false" selection-start-line="315" selection-start-column="14" selection-end-line="315" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5677#5678#0" expanded="false" />
+            <element signature="e#5714#5715#0" expanded="false" />
+            <element signature="e#6756#7066#0" expanded="false" />
+            <element signature="e#7065#7066#0" expanded="false" />
+            <element signature="e#7122#7442#0" expanded="false" />
+            <element signature="e#7441#7442#0" expanded="false" />
+            <element signature="e#8553#8870#0" expanded="false" />
+            <element signature="e#8869#8870#0" expanded="false" />
+            <element signature="e#9193#10541#0" expanded="false" />
+            <element signature="e#9349#10514#0" expanded="false" />
+            <element signature="e#9686#9951#0" expanded="false" />
+            <element signature="e#9950#9951#0" expanded="false" />
+            <element signature="e#10102#10373#0" expanded="false" />
+            <element signature="e#10372#10373#0" expanded="false" />
+            <element signature="e#10513#10514#0" expanded="false" />
+            <element signature="e#10540#10541#0" expanded="false" />
+            <element signature="e#11277#11278#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/IdsViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#834#835#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/MovieViewModelFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/FavoritesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2172#5162#0" expanded="true" />
+            <element signature="e#3546#5134#0" expanded="true" />
+            <element signature="e#3726#5091#0" expanded="true" />
+            <element signature="e#4200#4505#0" expanded="true" />
+            <element signature="e#4504#4505#0" expanded="true" />
+            <element signature="e#4688#4999#0" expanded="true" />
+            <element signature="e#4998#4999#0" expanded="true" />
+            <element signature="e#5090#5091#0" expanded="true" />
+            <element signature="e#5133#5134#0" expanded="true" />
+            <element signature="e#5161#5162#0" expanded="true" />
+            <element signature="e#6824#6825#0" expanded="true" />
+            <element signature="e#6861#6862#0" expanded="true" />
+            <element signature="e#7024#7477#0" expanded="true" />
+            <element signature="e#7208#7433#0" expanded="true" />
+            <element signature="e#7432#7433#0" expanded="true" />
+            <element signature="e#7476#7477#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/popularmovies/database/MovieDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
           <folding />
         </state>
       </provider>

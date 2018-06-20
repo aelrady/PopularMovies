@@ -2,6 +2,7 @@ package com.example.android.popularmovies;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -62,12 +63,12 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void populateDetailActivity() {
 
-        liveDataMovie = mMovieRoomDatabase.movieDao().getLiveDataMovie(id);
-        liveDataMovie.observe(this, new Observer<Movie>() {
+        MovieViewModelFactory factory = new MovieViewModelFactory(mMovieRoomDatabase, id);
+        final MovieViewModel viewModel = ViewModelProviders.of(this, factory).get(MovieViewModel.class);
+        viewModel.getMovie().observe(this, new Observer<Movie>() {
             @Override
             public void onChanged(@Nullable final Movie favoriteMovie) {
-                liveDataMovie.removeObserver(this);
-                Log.v("Message: ", "Receiving database update from LiveData");
+                viewModel.getMovie().removeObserver(this);
 
                 String moviePosterUrl = favoriteMovie.getPosterPath();
                 String fullMoviePosterUrl = IMAGE_BASE_URL + moviePosterUrl;
@@ -189,12 +190,10 @@ public class FavoritesActivity extends AppCompatActivity {
     }
 
     public void setStarColor() {
-        Log.v("Message: ", "Query database to set star color");
-        liveDataIds = mMovieRoomDatabase.movieDao().getLiveDataIds();
-        liveDataIds.observe(this, new Observer<int[]>() {
+        IdsViewModel viewModel = ViewModelProviders.of(this).get(IdsViewModel.class);
+        viewModel.getIds().observe(this, new Observer<int[]>() {
             @Override
             public void onChanged(@Nullable int[] ints) {
-                liveDataIds.removeObserver(this);
                 if (isInDatabase(ints, id)) {
                     runOnUiThread(new Runnable() {
                         @Override
