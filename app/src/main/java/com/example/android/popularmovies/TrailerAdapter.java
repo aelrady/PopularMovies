@@ -56,8 +56,9 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerA
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(mTrailers.get(position)));
-                mContext.startActivity(intent);
-
+                if (intent.resolveActivity(mContext.getPackageManager()) != null) {
+                    mContext.startActivity(intent);
+                }
             }
         });
     }
