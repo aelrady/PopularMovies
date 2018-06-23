@@ -1,6 +1,5 @@
 package com.example.android.popularmovies;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -44,7 +43,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private int id;
     private int[] ids;
-    private LiveData<int[]> liveDataIds;
 
     @BindView(R.id.detail_network_exception)
     TextView detailNetworkExceptionTextView;
@@ -199,7 +197,7 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<TrailerResults> call, Throwable t) {
-                detailNetworkExceptionTextView.setVisibility(View.VISIBLE);
+                return;
             }
         });
 
@@ -244,7 +242,7 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ReviewResults> call, Throwable t) {
-                detailNetworkExceptionTextView.setVisibility(View.VISIBLE);
+                return;
             }
         });
 

@@ -58,11 +58,22 @@ public class MainActivity extends AppCompatActivity {
         networkExceptionTextView = findViewById(R.id.network_exception);
         networkExceptionTextView.setVisibility(View.GONE);
 
-        if (isConnected()) {
-            populateGrid();
+        if (savedInstanceState != null) {
+            movies = savedInstanceState.getParcelableArrayList("movies");
+            picturePathList = savedInstanceState.getStringArrayList("pictures");
+            recyclerView = findViewById(R.id.rv_movies);
+            gridLayoutManager = new GridLayoutManager(this, 2);
+            recyclerView.setLayoutManager(gridLayoutManager);
+            movieAdapter = new MovieAdapter(MainActivity.this, picturePathList, movies);
+            recyclerView.setAdapter(movieAdapter);
             connectionTextView.setVisibility(View.GONE);
         } else {
-            connectionTextView.setVisibility(View.VISIBLE);
+            if (isConnected()) {
+                populateGrid();
+                connectionTextView.setVisibility(View.GONE);
+            } else {
+                connectionTextView.setVisibility(View.VISIBLE);
+            }
         }
 
         mMovieRoomDatabase = MovieRoomDatabase.getDatabase(getApplicationContext());

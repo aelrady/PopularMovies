@@ -35,16 +35,34 @@ public class TrailerActivity extends AppCompatActivity {
         setTitle("Trailers");
 
         connectionTextView = findViewById(R.id.no_connection);
-        if (isConnected()) {
-            populateTrailerActivity();
+        if (savedInstanceState != null) {
+            trailerList = savedInstanceState.getStringArrayList("trailerList");
+            recyclerView = findViewById(R.id.rv_trailers);
+            linearLayoutManager = new LinearLayoutManager(this);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            trailerAdapter = new TrailerAdapter(TrailerActivity.this, trailerList);
+            recyclerView.setAdapter(trailerAdapter);
+            DividerItemDecoration itemDecor = new DividerItemDecoration(TrailerActivity.this, DividerItemDecoration.VERTICAL);
+            recyclerView.addItemDecoration(itemDecor);
             connectionTextView.setVisibility(View.GONE);
         } else {
-            connectionTextView.setVisibility(View.VISIBLE);
+            if (isConnected()) {
+                populateTrailerActivity();
+                connectionTextView.setVisibility(View.GONE);
+            } else {
+                connectionTextView.setVisibility(View.VISIBLE);
+            }
         }
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putStringArrayList("trailerList", trailerList);
+        super.onSaveInstanceState(outState);
     }
 
     private void populateTrailerActivity() {
